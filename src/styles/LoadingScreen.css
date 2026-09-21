@@ -1,0 +1,50 @@
+.loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #08060d;
+}
+
+.loading h1 {
+    margin: 0;
+    font-size: 64px;
+    color: #fff;
+}
+
+.loading h1 span {
+    color: #aa3bff;
+}
+
+.progress {
+    width: 250px;
+    height: 4px;
+    margin: 35px 0 25px;
+    background: #21152b;
+    overflow: hidden;
+}
+
+.progress div {
+    width: 35%;
+    height: 100%;
+    background: #aa3bff;
+    animation: cargar 1.5s ease-in-out infinite;
+}
+
+.loading p {
+    margin: 0;
+    color: #c084fc;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+@keyframes cargar {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(300%);
+    }
+}
