@@ -1,13 +1,9 @@
-import { useState } from "react";
 import {
-    FaCat,
     FaGithub,
     FaLinkedinIn,
     FaEnvelope,
-    FaSun,
-    FaMoon,
-    FaGraduationCap,
 } from "react-icons/fa6";
+
 import {
     SiPhp,
     SiJavascript,
@@ -20,56 +16,12 @@ import {
 } from "react-icons/si";
 
 import fotoPerfil from "../assets/perfil.png";
-import imagenSobreMi from "../assets/sobremi.png";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
-    const [modoOscuro, setModoOscuro] = useState(false);
-
-    const cambiarTema = () => {
-        setModoOscuro(!modoOscuro);
-        document.documentElement.classList.toggle("dark");
-    };
-
     return (
         <main>
-            <nav className="navbar">
-                <a href="#inicio" className="logo">
-                    <FaCat />
-
-                    <div className="logo-name">
-                        <span>MARCELA</span>
-                        <small>PERDOMO YELA</small>
-                    </div>
-                </a>
-
-                <div className="nav-links">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#sobre-mi">Sobre mí</a>
-                    <a href="#experiencia">Experiencia</a>
-                    <a href="#proyectos">Proyectos</a>
-                    <a href="#contacto">Contacto</a>
-                </div>
-
-                <div className="nav-actions">
-                    <a
-                        href="/CV-Marcela-Perdomo.pdf"
-                        className="cv-button"
-                        download
-                    >
-                        Descargar CV
-                    </a>
-
-                    <button
-                        className="theme-button"
-                        onClick={cambiarTema}
-                        aria-label="Cambiar tema"
-                    >
-                        {modoOscuro ? <FaMoon /> : <FaSun />}
-                    </button>
-                </div>
-            </nav>
-
             <section id="inicio" className="hero">
                 <div className="hero-text">
                     <p className="saludo">HOLA, SOY</p>
@@ -87,8 +39,8 @@ function Home() {
                     </p>
 
                     <div className="hero-buttons">
-                        <a href="#proyectos">Ver mis proyectos →</a>
-                        <a href="#contacto">Contáctame</a>
+                        <Link to="/proyectos">Ver mis proyectos</Link>
+                        <Link to="/contacto">Contáctame</Link>
                     </div>
 
                     <p className="social-title">CONECTA CONMIGO</p>
@@ -126,6 +78,7 @@ function Home() {
                     <div className="profile-cards">
                         <div className="profile-card">
                             <span className="card-icon">◷</span>
+
                             <div>
                                 <strong>2+ Años de experiencia</strong>
                                 <small>Desarrollo de software</small>
@@ -134,6 +87,7 @@ function Home() {
 
                         <div className="profile-card">
                             <span className="card-icon">&lt;/&gt;</span>
+
                             <div>
                                 <strong>PHP</strong>
                                 <small>Lenguaje principal</small>
@@ -142,6 +96,7 @@ function Home() {
 
                         <div className="profile-card">
                             <span className="card-icon">JS</span>
+
                             <div>
                                 <strong>JavaScript</strong>
                                 <small>Tecnologías web</small>
@@ -266,55 +221,6 @@ function Home() {
                         </div>
 
                     </div>
-                </div>
-            </section>
-
-            <section id="sobre-mi" className="about-section">
-                <div className="about-content">
-
-                    <div className="about-image">
-                        <img
-                            src={imagenSobreMi}
-                            alt="Marcela programando"
-                        />
-                    </div>
-
-                    <div className="about-info">
-                        <p className="about-label">SOBRE MÍ</p>
-
-                        <h2>
-                            Desarrolladora de software
-                            <span>en constante aprendizaje</span>
-                        </h2>
-
-                        <p className="about-text">
-                            Tengo formación en Análisis y Desarrollo de Software y me
-                            apasiona aprender, practicar e implementar nuevas tecnologías.
-                            Me interesa crear soluciones funcionales y seguir creciendo
-                            a través de nuevos retos.
-                        </p>
-
-                        <p className="about-text">
-                            Actualmente continúo fortaleciendo mis conocimientos con
-                            formación en áreas como CS50 de Harvard, Power BI e
-                            Inteligencia Artificial, además de desarrollo web y APIs REST.
-                        </p>
-
-                        <div className="about-interests">
-                            <p>ÁREAS QUE ESTOY EXPLORANDO</p>
-
-                            <div className="interest-list">
-                                <span><FaGraduationCap /> CS50 · Harvard</span>
-                                <span>Power BI</span>
-                                <span>Inteligencia Artificial</span>
-                                <span>APIs REST</span>
-                                <span>SQL</span>
-                                <span>Python</span>
-                                <span>Java</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </section>
         </main>

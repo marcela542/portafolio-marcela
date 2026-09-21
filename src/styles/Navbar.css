@@ -1,0 +1,221 @@
+.navbar {
+    position: relative;
+    z-index: 9999;
+    width: min(1080px, calc(100% - 40px));
+    margin: 24px auto;
+    padding: 7px 12px 7px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #e7d9f2;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(90, 45, 120, 0.07);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.navbar:hover {
+    border-color: #d9c1eb;
+    box-shadow: 0 14px 35px rgba(120, 60, 160, 0.10);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #08060d;
+    text-decoration: none;
+}
+
+.logo svg {
+    color: #08060d;
+    font-size: 29px;
+    transition: 0.3s ease;
+}
+
+.logo:hover svg {
+    color: #aa3bff;
+    transform: translateY(-2px) rotate(-4deg);
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-name span {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.logo-name small {
+    margin-top: 4px;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #6b6375;
+    transition: 0.3s ease;
+}
+
+.logo:hover .logo-name small {
+    color: #aa3bff;
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 9px 15px;
+    border-radius: 12px;
+    color: #6b6375;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.25s ease;
+}
+
+.nav-links a:first-child {
+    background: #f1e4fb;
+    color: #9a2df0;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #aa3bff;
+    background: #f4eafb;
+    transform: translateY(-1px);
+}
+
+.nav-links a:first-child:hover {
+    background: #ead7f8;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.cv-button {
+    padding: 11px 19px;
+    border-radius: 14px;
+    background: #aa3bff;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 7px 18px rgba(170, 59, 255, 0.20);
+    transition: 0.25s ease;
+}
+
+.cv-button:hover {
+    background: #982ee8;
+    transform: translateY(-2px);
+    box-shadow: 0 11px 25px rgba(170, 59, 255, 0.28);
+}
+
+.theme-button {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    margin-left: 2px;
+    border: none;
+    border-left: 1px solid #d9c9e5;
+    border-radius: 0 12px 12px 0;
+    background: transparent;
+    color: #08060d;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.theme-button:hover {
+    color: #aa3bff;
+    background: #f4eafb;
+    transform: rotate(10deg);
+}
+
+.dark .navbar {
+    background: rgba(31, 32, 40, 0.94);
+    border-color: #34313d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.dark .navbar:hover {
+    border-color: #51465d;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+}
+
+.dark .logo {
+    color: #f3f4f6;
+}
+
+.dark .logo svg {
+    color: #f3f4f6;
+}
+
+.dark .logo:hover svg {
+    color: #c084fc;
+}
+
+.dark .logo-name small {
+    color: #9ca3af;
+}
+
+.dark .logo:hover .logo-name small {
+    color: #c084fc;
+}
+
+.dark .nav-links a {
+    color: #9ca3af;
+}
+
+.dark .nav-links a:first-child {
+    background: #30213d;
+    color: #c084fc;
+}
+
+.dark .nav-links a:hover {
+    color: #c084fc;
+    background: #30213d;
+}
+
+.dark .nav-links a:first-child:hover {
+    background: #382545;
+}
+
+.dark .theme-button {
+    border-color: #403847;
+    color: #f3f4f6;
+}
+
+.dark .theme-button:hover {
+    color: #c084fc;
+    background: #30213d;
+}
+
+.dark .cv-button {
+    background: #aa3bff;
+    color: #fff;
+}
+
+.dark .cv-button:hover {
+    background: #b34cff;
+}

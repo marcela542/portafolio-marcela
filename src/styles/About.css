@@ -1,0 +1,142 @@
+.about-section {
+    width: min(1100px, calc(100% - 40px));
+    margin: 80px auto 120px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    align-items: center;
+    gap: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border: 1px solid #e8e3eb;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(35, 20, 50, 0.08);
+    box-sizing: border-box;
+}
+
+.about-info {
+    max-width: 620px;
+}
+
+.about-label {
+    margin: 0 0 12px;
+    color: #8a8490;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.about-info h2 {
+    margin: 0 0 24px;
+    color: #08060d;
+    font-size: 42px;
+    line-height: 1.15;
+}
+
+.about-info h2 span {
+    display: block;
+    color: #08060d;
+}
+
+.about-text {
+    margin: 0 0 16px;
+    color: #6b6375;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about-interests {
+    margin-top: 28px;
+}
+
+.about-interests > p {
+    margin: 0 0 14px;
+    color: #8a8490;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.interest-list span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 14px;
+    border: 1px solid #e7e2eb;
+    border-radius: 12px;
+    background: #fff;
+    color: #4f4a56;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(35, 20, 50, 0.04);
+    transition: 0.25s ease;
+}
+
+.interest-list span svg {
+    font-size: 13px;
+}
+
+.interest-list span:hover {
+    color: #aa3bff;
+    border-color: #cda4ed;
+    background: #faf6ff;
+    box-shadow: 0 8px 20px rgba(170, 59, 255, 0.10);
+    transform: translateY(-2px);
+}
+
+.dark .about-label {
+    color: #9ca3af;
+}
+
+.dark .about-info h2,
+.dark .about-info h2 span {
+    color: #f3f4f6;
+}
+
+.dark .about-text {
+    color: #9ca3af;
+}
+
+.dark .about-interests > p {
+    color: #9ca3af;
+}
+
+.dark .interest-list span {
+    background: #1f2028;
+    border-color: #2e303a;
+    color: #d1d5db;
+}
+
+.dark .interest-list span:hover {
+    color: #c084fc;
+    border-color: #6f5a80;
+    background: #29212f;
+}
+
+.dark .about-image img {
+    border-color: #34313d;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+}
