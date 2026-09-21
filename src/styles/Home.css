@@ -1,15 +1,24 @@
+/* Navbar */
+
 .navbar {
   position: relative;
-  width: min(1050px, calc(100% - 40px));
+  width: min(1080px, calc(100% - 40px));
   margin: 24px auto;
-  padding: 8px 14px;
+  padding: 7px 12px 7px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #faf8ff;
-  border: 1px solid #e9ddf5;
-  border-radius: 50px;
-  box-shadow: 0 6px 20px rgba(120, 70, 170, 0.08);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e7d9f2;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(90, 45, 120, 0.07);
+  backdrop-filter: blur(12px);
+  transition: 0.3s ease;
+}
+
+.navbar:hover {
+  border-color: #d9c1eb;
+  box-shadow: 0 14px 35px rgba(120, 60, 160, 0.10);
 }
 
 .logo {
@@ -22,7 +31,13 @@
 
 .logo svg {
   color: #08060d;
-  font-size: 28px;
+  font-size: 29px;
+  transition: 0.3s ease;
+}
+
+.logo:hover svg {
+  color: #aa3bff;
+  transform: translateY(-2px) rotate(-4deg);
 }
 
 .logo-name {
@@ -43,6 +58,11 @@
   font-weight: 600;
   letter-spacing: 2px;
   color: #6b6375;
+  transition: 0.3s ease;
+}
+
+.logo:hover .logo-name small {
+  color: #aa3bff;
 }
 
 .nav-links {
@@ -51,35 +71,61 @@
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 8px;
 }
 
 .nav-links a {
+  position: relative;
+  padding: 9px 15px;
+  border-radius: 12px;
   color: #6b6375;
   font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+.nav-links a:first-child {
+  background: #f1e4fb;
+  color: #9a2df0;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
   color: #aa3bff;
+  background: #f4eafb;
+  transform: translateY(-1px);
+}
+
+.nav-links a:first-child:hover {
+  background: #ead7f8;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-left: auto;
 }
 
 .cv-button {
-  padding: 10px 17px;
-  border-radius: 25px;
+  padding: 11px 19px;
+  border-radius: 14px;
   background: #aa3bff;
   color: #fff;
   font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0 7px 18px rgba(170, 59, 255, 0.20);
+  transition: 0.25s ease;
+}
+
+.cv-button:hover {
+  background: #982ee8;
+  transform: translateY(-2px);
+  box-shadow: 0 11px 25px rgba(170, 59, 255, 0.28);
 }
 
 .theme-button {
@@ -87,18 +133,22 @@
   height: 40px;
   display: grid;
   place-items: center;
+  margin-left: 2px;
   border: none;
-  border-radius: 50%;
-  background: #f1edf6;
+  border-left: 1px solid #d9c9e5;
+  border-radius: 0 12px 12px 0;
+  background: transparent;
   color: #08060d;
   cursor: pointer;
   font-size: 16px;
+  transition: 0.3s ease;
 }
 
 .theme-button:hover {
   color: #aa3bff;
+  background: #f4eafb;
+  transform: rotate(10deg);
 }
-
 
 /* Hero */
 
@@ -145,6 +195,8 @@
   line-height: 1.7;
 }
 
+/* Botones */
+
 .hero-buttons {
   display: flex;
   gap: 14px;
@@ -164,9 +216,17 @@
 }
 
 .hero-buttons a:last-child {
-  border: 1px solid #aa3bff;
-  color: #aa3bff;
+  border: 1px solid #c98aff;
+  background: #f7f0ff;
+  color: #8f2ee8;
 }
+
+.hero-buttons a:last-child:hover {
+  background: #dfc4f8;
+  border-color: #aa3bff;
+}
+
+/* Redes sociales */
 
 .social-title {
   margin-top: 36px;
@@ -187,8 +247,9 @@
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: #fff;
+  background: #f7f3fb;
   color: #08060d;
+  border: 1px solid #eee5f5;
   box-shadow: 0 6px 18px rgba(35, 20, 50, 0.08);
   text-decoration: none;
   font-size: 18px;
@@ -197,7 +258,6 @@
 .social-links a:hover {
   color: #aa3bff;
 }
-
 
 /* Imagen de perfil */
 
@@ -220,7 +280,6 @@
   object-fit: cover;
   border-radius: 50%;
 }
-
 
 /* Tarjetas de perfil */
 
@@ -276,7 +335,6 @@
   font-size: 10px;
 }
 
-
 /* Tema oscuro */
 
 .dark {
@@ -298,9 +356,14 @@
 }
 
 .dark .navbar {
-  background: #1f2028;
-  border-color: #2e303a;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+  background: rgba(31, 32, 40, 0.94);
+  border-color: #34313d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.dark .navbar:hover {
+  border-color: #51465d;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
 }
 
 .dark .logo {
@@ -311,21 +374,53 @@
   color: #f3f4f6;
 }
 
+.dark .logo:hover svg {
+  color: #c084fc;
+}
+
 .dark .logo-name small {
   color: #9ca3af;
+}
+
+.dark .logo:hover .logo-name small {
+  color: #c084fc;
 }
 
 .dark .nav-links a {
   color: #9ca3af;
 }
 
-.dark .nav-links a:hover {
+.dark .nav-links a:first-child {
+  background: #30213d;
   color: #c084fc;
 }
 
+.dark .nav-links a:hover {
+  color: #c084fc;
+  background: #30213d;
+}
+
+.dark .nav-links a:first-child:hover {
+  background: #382545;
+}
+
 .dark .theme-button {
-  background: #2e303a;
+  border-color: #403847;
   color: #f3f4f6;
+}
+
+.dark .theme-button:hover {
+  color: #c084fc;
+  background: #30213d;
+}
+
+.dark .cv-button {
+  background: #aa3bff;
+  color: #fff;
+}
+
+.dark .cv-button:hover {
+  background: #b34cff;
 }
 
 .dark .hero h1 {
@@ -365,4 +460,98 @@
 
 .dark .profile-card small {
   color: #9ca3af;
+}
+
+/* Stack tecnológico */
+
+.tech-stack {
+  width: 100%;
+  margin: 20px auto 100px;
+  overflow: hidden;
+}
+
+.tech-title {
+  margin: 0 0 28px;
+  text-align: center;
+  color: #6b6375;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.tech-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tech-track {
+  width: max-content;
+  display: flex;
+  animation: tech-scroll 25s linear infinite;
+}
+
+.tech-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-right: 18px;
+  flex-shrink: 0;
+}
+
+.tech-item {
+  min-width: 130px;
+  height: 58px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #d9b9f2;
+  border-radius: 16px;
+  background: #f0e2fc;
+  color: #08060d;
+  box-shadow: 0 8px 20px rgba(170, 59, 255, 0.10);
+  box-sizing: border-box;
+}
+
+.tech-item svg {
+  font-size: 22px;
+  color: #aa3bff;
+}
+
+.tech-item span {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tech-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tech-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Stack tecnológico - tema oscuro */
+
+.dark .tech-title {
+  color: #9ca3af;
+}
+
+.dark .tech-item {
+  background: #1f2028;
+  border-color: #2e303a;
+  color: #f3f4f6;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+.dark .tech-item svg {
+  color: #c084fc;
 }
