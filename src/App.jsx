@@ -1,7 +1,7 @@
-import AppRouter from './router/AppRouter';
+import LoadingScreen from './components/LoadingScreen';
 
 function App() {
-    return <AppRouter />;
+    return <LoadingScreen />;
 }
 
 export default App;
