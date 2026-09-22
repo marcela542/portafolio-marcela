@@ -1,11 +1,10 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
     FaCat,
     FaSun,
     FaMoon,
 } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-
 import "../styles/Navbar.css";
 
 function Navbar() {
@@ -18,21 +17,61 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <Link to="/" className="logo">
+            <NavLink to="/" className="logo">
                 <FaCat />
 
                 <div className="logo-name">
                     <span>MARCELA</span>
                     <small>PERDOMO YELA</small>
                 </div>
-            </Link>
+            </NavLink>
 
             <div className="nav-links">
-                <Link to="/">Inicio</Link>
-                <Link to="/sobre-mi">Sobre mí</Link>
-                <Link to="/experiencia">Experiencia</Link>
-                <Link to="/proyectos">Proyectos</Link>
-                <Link to="/contacto">Contacto</Link>
+                <NavLink
+                    to="/"
+                    end
+                    className={({ isActive }) =>
+                        isActive ? "active" : ""
+                    }
+                >
+                    Inicio
+                </NavLink>
+
+                <NavLink
+                    to="/sobre-mi"
+                    className={({ isActive }) =>
+                        isActive ? "active" : ""
+                    }
+                >
+                    Sobre mí
+                </NavLink>
+
+                <NavLink
+                    to="/experiencia"
+                    className={({ isActive }) =>
+                        isActive ? "active" : ""
+                    }
+                >
+                    Experiencia
+                </NavLink>
+
+                <NavLink
+                    to="/proyectos"
+                    className={({ isActive }) =>
+                        isActive ? "active" : ""
+                    }
+                >
+                    Proyectos
+                </NavLink>
+
+                <NavLink
+                    to="/contacto"
+                    className={({ isActive }) =>
+                        isActive ? "active" : ""
+                    }
+                >
+                    Contacto
+                </NavLink>
             </div>
 
             <div className="nav-actions">
