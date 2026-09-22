@@ -1,53 +1,74 @@
+import { Link } from "react-router-dom";
 import {
+    FaArrowRight,
+    FaEnvelope,
     FaGithub,
     FaLinkedinIn,
-    FaEnvelope,
+    FaReact,
+    FaPhp,
+    FaDatabase,
+    FaBriefcase,
+    FaJs,
+    FaJava
 } from "react-icons/fa6";
 
 import {
-    SiPhp,
-    SiJavascript,
-    SiReact,
     SiMysql,
-    SiHtml5,
-    SiGit,
-    SiGithub,
+    SiVite,
     SiPython,
+    SiPostgresql
 } from "react-icons/si";
 
-import fotoPerfil from "../assets/perfil.png";
+import rocky from "../assets/rocky.png";
+import milo from "../assets/milo.png";
+import marcela from "../assets/perfil.png";
+
 import "../styles/Home.css";
-import { Link } from "react-router-dom";
 
 function Home() {
     return (
-        <main>
-            <section id="inicio" className="hero">
-                <div className="hero-text">
-                    <p className="saludo">HOLA, SOY</p>
+        <main className="home-page">
+            <section className="home-hero">
+                <div className="hero-left">
 
-                    <h1>
-                        Marcela
-                        <span>Perdomo Yela</span>
-                    </h1>
-
-                    <h2>DESARROLLADORA DE SOFTWARE</h2>
-
-                    <p className="descripcion">
-                        Me apasiona la tecnología, el aprendizaje constante y crear
-                        soluciones que generen un impacto real.
+                    <p className="hero-label">
+                        <span></span>
+                        // DESARROLLADORA DE SOFTWARE · FULL STACK
                     </p>
 
-                    <div className="hero-buttons">
-                        <Link to="/proyectos">Ver mis proyectos</Link>
-                        <Link to="/contacto">Contáctame</Link>
+                    <h1>
+                        HOLA, SOY
+                        <span>MARCELA</span>
+                    </h1>
+
+                    <p className="hero-description">
+                        Desarrolladora de software Full Stack enfocada en crear soluciones funcionales de extremo a extremo: interfaces con React y JavaScript, backend y APIs con PHP, bases de datos SQL y automatización de procesos.
+                    </p>
+
+                    <div className="hero-terminal">
+                        <span>&gt;</span>
+                        {"const solution = await buildSolution({ code, data, ideas });"}
+                        <b></b>
                     </div>
 
-                    <p className="social-title">CONECTA CONMIGO</p>
+                    <div className="hero-buttons">
+                        <Link to="/proyectos" className="pixel-button primary">
+                            VER PROYECTOS
+                            <FaArrowRight />
+                        </Link>
+
+                        <Link to="/contacto" className="pixel-button secondary">
+                            <FaEnvelope />
+                            CONTACTARME
+                        </Link>
+                    </div>
 
                     <div className="social-links">
+
                         <a
                             href="https://github.com/marcela542"
+                            target="_blank"
+                            rel="noreferrer"
                             aria-label="GitHub"
                         >
                             <FaGithub />
@@ -55,6 +76,8 @@ function Home() {
 
                         <a
                             href="https://www.linkedin.com/in/marcela-perdomo-yela-800677266/"
+                            target="_blank"
+                            rel="noreferrer"
                             aria-label="LinkedIn"
                         >
                             <FaLinkedinIn />
@@ -66,161 +89,176 @@ function Home() {
                         >
                             <FaEnvelope />
                         </a>
+
                     </div>
+
+                    <div className="hero-stats">
+
+                        <div className="stat-card purple">
+                            <FaDatabase />
+                            <strong>FULL STACK</strong>
+                            <span>FRONTEND<br />+ BACKEND</span>
+                        </div>
+
+                        <div className="stat-card yellow">
+                            <FaBriefcase />
+                            <span className="stat-number">1</span>
+                            <span>AÑO DE<br />EXPERIENCIA</span>
+                        </div>
+
+                        <div className="stat-card white">
+                            <FaPhp />
+                            <strong>PHP</strong>
+                            <span>LENGUAJE<br />PRINCIPAL</span>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div className="hero-image">
-                    <img
-                        src={fotoPerfil}
-                        alt="Ilustración de perfil de Marcela"
-                    />
+                <div className="hero-right">
 
-                    <div className="profile-cards">
-                        <div className="profile-card">
-                            <span className="card-icon">◷</span>
+                    <div className="profile-window">
 
-                            <div>
-                                <strong>2+ Años de experiencia</strong>
-                                <small>Desarrollo de software</small>
+                        <div className="window-header">
+                            <strong>Marcela.exe</strong>
+
+                            <div className="window-controls">
+                                <span>−</span>
+                                <span>□</span>
+                                <span>×</span>
                             </div>
                         </div>
 
-                        <div className="profile-card">
-                            <span className="card-icon">&lt;/&gt;</span>
-
-                            <div>
-                                <strong>PHP</strong>
-                                <small>Lenguaje principal</small>
-                            </div>
+                        <div className="profile-placeholder">
+                            <img
+                                src={marcela}
+                                alt="Marcela en pixel art"
+                                className="profile-image"
+                            />
                         </div>
 
-                        <div className="profile-card">
-                            <span className="card-icon">JS</span>
+                        <div className="profile-status">
+                            <span>
+                                <i></i>
+                                Online
+                            </span>
 
-                            <div>
-                                <strong>JavaScript</strong>
-                                <small>Tecnologías web</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="tech-stack">
-                <p className="tech-title">STACK TECNOLÓGICO</p>
-
-                <div className="tech-slider">
-                    <div className="tech-track">
-
-                        <div className="tech-group">
-                            <div className="tech-item">
-                                <SiPhp />
-                                <span>PHP</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiJavascript />
-                                <span>JavaScript</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiReact />
-                                <span>React</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiPython />
-                                <span>Python</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <span>Java</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <span>SQL</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiMysql />
-                                <span>MySQL</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <span>REST API</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiHtml5 />
-                                <span>HTML5</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiGit />
-                                <span>Git</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiGithub />
-                                <span>GitHub</span>
-                            </div>
-                        </div>
-
-                        <div className="tech-group">
-                            <div className="tech-item">
-                                <SiPhp />
-                                <span>PHP</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiJavascript />
-                                <span>JavaScript</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiReact />
-                                <span>React</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiPython />
-                                <span>Python</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <span>Java</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <span>SQL</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiMysql />
-                                <span>MySQL</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <span>REST API</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiHtml5 />
-                                <span>HTML5</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiGit />
-                                <span>Git</span>
-                            </div>
-
-                            <div className="tech-item">
-                                <SiGithub />
-                                <span>GitHub</span>
-                            </div>
+                            <span>
+                                <b>●</b>
+                                Cali, Colombia
+                            </span>
                         </div>
 
                     </div>
+
+                    <div className="focus-window">
+
+                        <div className="small-window-header">
+                            <strong>current.focus</strong>
+
+                            <div>
+                                <span>−</span>
+                                <span>□</span>
+                                <span>×</span>
+                            </div>
+                        </div>
+
+                        <div className="focus-list">
+
+                            <label>
+                                <input type="checkbox" checked readOnly />
+                                Aprender
+                            </label>
+
+                            <label>
+                                <input type="checkbox" checked readOnly />
+                                Desarrollar
+                            </label>
+
+                            <label>
+                                <input type="checkbox" checked readOnly />
+                                Crear
+                            </label>
+
+                            <label>
+                                <input type="checkbox" checked readOnly />
+                                Mejorar
+                            </label>
+
+                            <label>
+                                <input type="checkbox" />
+                                Seguir creciendo...
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div className="cat-message">
+                        print ("
+                        <br />
+                        Hola, 
+                        Mundo
+                        ")
+                        <br />
+                    </div>
+
+                    <div className="my-cats">
+                        
+                        <img
+                            src={milo}
+                            alt="Milo en pixel art"
+                        />
+
+                        <img
+                            src={rocky}
+                            alt="Rocky en pixel art"
+                        />
+                    </div>
+
+                    <div className="tech-window">
+
+                        <div className="small-window-header">
+                            <strong>tech.stack</strong>
+
+                            <div>
+                                <span>−</span>
+                                <span>□</span>
+                                <span>×</span>
+                            </div>
+                        </div>
+
+                        <div className="tech-icons">
+                            <div className="tech-icons-track">
+                                <FaReact />
+                                <FaPhp />
+                                <SiMysql />
+                                <FaJs />
+                                <SiVite />
+                                <FaDatabase />
+                                <FaGithub />
+                                <SiPython />
+                                <FaJava />
+                                <SiPostgresql />
+
+                                <FaReact />
+                                <FaPhp />
+                                <SiMysql />
+                                <FaJs />
+                                <SiVite />
+                                <FaDatabase />
+                                <FaGithub />
+                                <SiPython />
+                                <FaJava />
+                                <SiPostgresql />
+                            </div>
+                        </div>
+
+                        <p>y más...</p>
+
+                    </div>
+
                 </div>
             </section>
         </main>

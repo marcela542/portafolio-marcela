@@ -1,0 +1,230 @@
+.app-layout {
+    --sidebar-width: 125px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    background: #ecebef;
+}
+
+.app-content {
+    min-width: 0;
+    min-height: 100vh;
+}
+
+.desktop {
+    position: relative;
+    min-width: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 16px;
+    background-color: #87bdf2;
+    background-image: url("../assets/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.main-window {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+    width: calc(100% - 56px);
+    height: calc(100% - 56px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f7f7f8;
+    border: 1px solid #c7c8cc;
+    border-radius: 8px;
+    box-shadow:
+        0 10px 30px rgba(35, 35, 45, 0.10),
+        0 2px 6px rgba(35, 35, 45, 0.06);
+}
+
+.main-window.maximized {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: calc(var(--sidebar-width) + 8px);
+    width: auto;
+    height: auto;
+    z-index: 9000;
+}
+
+.main-window-header {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 14px;
+    flex-shrink: 0;
+    background: #e3e4e7;
+    border-bottom: 1px solid #c7c8cc;
+    color: #27282c;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.main-window-header strong {
+    font-weight: 600;
+}
+
+.main-window-controls {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-window-controls button {
+    width: 34px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #414249;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.main-window-controls button:hover {
+    background: #d5d6d9;
+    color: #111111;
+}
+
+.main-window-controls button:last-child:hover {
+    background: #d9b4b4;
+    color: #7b1f1f;
+}
+
+.main-window-content {
+    min-width: 0;
+    min-height: 0;
+    flex: 1;
+    overflow: auto;
+    background: #f7f7f8;
+}
+
+.dark .app-layout {
+    background: #202126;
+}
+
+.dark .main-window {
+    background: #2a2b30;
+    border-color: #44464d;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.22),
+        0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.dark .main-window-header {
+    background: #35363c;
+    border-bottom-color: #46484f;
+    color: #eeeeef;
+}
+
+.dark .main-window-controls button {
+    color: #d7d8dc;
+}
+
+.dark .main-window-controls button:hover {
+    background: #45474e;
+    color: #ffffff;
+}
+
+.dark .main-window-controls button:last-child:hover {
+    background: #5b3737;
+    color: #ffffff;
+}
+
+.dark .main-window-content {
+    background: #2a2b30;
+}
+
+@media (max-width: 900px) {
+    .app-layout {
+        --sidebar-width: 95px;
+        grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+    }
+
+    .desktop {
+        padding: 10px;
+    }
+
+    .main-window {
+        height: calc(100vh - 20px);
+    }
+
+    .main-window.maximized {
+        left: calc(var(--sidebar-width) + 6px);
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+    }
+}
+
+@media (max-width: 700px) {
+    .app-layout {
+        display: block;
+    }
+
+    .desktop {
+        min-height: calc(100vh - 74px);
+        padding: 8px;
+    }
+
+    .main-window {
+        height: calc(100vh - 90px);
+        border-radius: 6px;
+    }
+
+    .main-window-header {
+        min-height: 36px;
+    }
+
+    .main-window.maximized {
+        left: 8px;
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+    }
+}
+
+@media (max-width: 520px) {
+    .desktop {
+        padding: 6px;
+    }
+
+    .main-window {
+        height: calc(100vh - 86px);
+    }
+
+    .main-window-header {
+        min-height: 34px;
+        padding-left: 10px;
+        font-size: 10px;
+    }
+
+    .main-window-controls button {
+        width: 30px;
+    }
+
+    .main-window.maximized {
+        left: 6px;
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+    }
+}

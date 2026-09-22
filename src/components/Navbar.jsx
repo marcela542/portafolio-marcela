@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import {
-    FaCat,
+    FaHouse,
+    FaUser,
+    FaBriefcase,
+    FaFolder,
+    FaEnvelope,
+    FaFileArrowDown,
     FaSun,
-    FaMoon,
+    FaMoon
 } from "react-icons/fa6";
+
 import "../styles/Navbar.css";
 
-function Navbar() {
+function Navbar({ estadoVentanas, abrirVentana }) {
     const [modoOscuro, setModoOscuro] = useState(false);
 
     const cambiarTema = () => {
@@ -15,72 +22,107 @@ function Navbar() {
         document.documentElement.classList.toggle("dark");
     };
 
+    const indicadorVentana = (ruta) => {
+        if (estadoVentanas[ruta] !== "minimized") {
+            return null;
+        }
+
+        return (
+            <span
+                className="window-minimized-indicator"
+                aria-label="Ventana minimizada"
+            ></span>
+        );
+    };
+
+    const claseEnlace = (ruta, isActive) => {
+        if (
+            isActive &&
+            estadoVentanas[ruta] === "open"
+        ) {
+            return "active";
+        }
+
+        return "";
+    };
+
     return (
-        <nav className="navbar">
-            <NavLink to="/" className="logo">
-                <FaCat />
+        <aside className="navbar">
 
-                <div className="logo-name">
-                    <span>MARCELA</span>
-                    <small>PERDOMO YELA</small>
-                </div>
-            </NavLink>
+            <nav className="nav-links">
 
-            <div className="nav-links">
                 <NavLink
                     to="/"
                     end
+                    onClick={() => abrirVentana("/")}
                     className={({ isActive }) =>
-                        isActive ? "active" : ""
+                        claseEnlace("/", isActive)
                     }
                 >
-                    Inicio
+                    <FaHouse />
+                    <span>Inicio</span>
+                    {indicadorVentana("/")}
                 </NavLink>
 
                 <NavLink
                     to="/sobre-mi"
+                    onClick={() => abrirVentana("/sobre-mi")}
                     className={({ isActive }) =>
-                        isActive ? "active" : ""
+                        claseEnlace("/sobre-mi", isActive)
                     }
                 >
-                    Sobre mí
+                    <FaUser />
+                    <span>Sobre mí</span>
+                    {indicadorVentana("/sobre-mi")}
                 </NavLink>
 
                 <NavLink
                     to="/experiencia"
+                    onClick={() => abrirVentana("/experiencia")}
                     className={({ isActive }) =>
-                        isActive ? "active" : ""
+                        claseEnlace("/experiencia", isActive)
                     }
                 >
-                    Experiencia
+                    <FaBriefcase />
+                    <span>Experiencia</span>
+                    {indicadorVentana("/experiencia")}
                 </NavLink>
 
                 <NavLink
                     to="/proyectos"
+                    onClick={() => abrirVentana("/proyectos")}
                     className={({ isActive }) =>
-                        isActive ? "active" : ""
+                        claseEnlace("/proyectos", isActive)
                     }
                 >
-                    Proyectos
+                    <FaFolder />
+                    <span>Proyectos</span>
+                    {indicadorVentana("/proyectos")}
                 </NavLink>
 
                 <NavLink
                     to="/contacto"
+                    onClick={() => abrirVentana("/contacto")}
                     className={({ isActive }) =>
-                        isActive ? "active" : ""
+                        claseEnlace("/contacto", isActive)
                     }
                 >
-                    Contacto
+                    <FaEnvelope />
+                    <span>Contacto</span>
+                    {indicadorVentana("/contacto")}
                 </NavLink>
-            </div>
+
+            </nav>
 
             <div className="nav-actions">
+
                 <a
                     href="/CV-Marcela-Perdomo.pdf"
                     className="cv-button"
                     download
                 >
-                    Descargar CV
+                    <FaFileArrowDown />
+                    <span>Descargar CV</span>
                 </a>
 
                 <button
@@ -90,8 +132,10 @@ function Navbar() {
                 >
                     {modoOscuro ? <FaMoon /> : <FaSun />}
                 </button>
+
             </div>
-        </nav>
+
+        </aside>
     );
 }
 
