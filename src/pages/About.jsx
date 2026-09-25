@@ -21,10 +21,7 @@ function About() {
 
                 <div className="about-image-area">
                     <div className="about-image-placeholder">
-                        <img
-                            src={imagen1}
-                            alt="Mario Pixeleado"
-                        />
+                        <img src={imagen1} alt="Mario Pixeleado"/>
                     </div>
                 </div>
 
