@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa6";
 
 import "../styles/About.css";
-import imagen1 from "../assets/imagen1.jpg";
+import imagen1 from "../assets/imagen1.png";
 
 function About() {
     const [tabActivo, setTabActivo] = useState("about");

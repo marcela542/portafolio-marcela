@@ -153,9 +153,34 @@ function Projects() {
                                     ? gestionpersonalImg
                                     : proyecto.claseImagen === "python"
                                         ? pythonImg
-                                        : proyecto.claseImagen === "landing"
+                                        : proyecto.claseImagen === "landing-contacto"
                                         ? landingImg
                                     : null;
+
+                        const desplazamientoX =
+                            posicion === 0
+                                ? 0
+                                : posicion === 1
+                                    ? 185
+                                    : posicion === -1
+                                        ? -185
+                                        : posicion === 2
+                                            ? 360
+                                            : -360;
+
+                        const escala =
+                            posicion === 0
+                                ? 1
+                                : Math.abs(posicion) === 1
+                                    ? 0.94
+                                    : 0.88;
+
+                        const estadoMeta =
+                            proyecto.titulo === "ClickTienda"
+                                ? "Completado"
+                                : proyecto.estado || proyecto.tipo || "Proyecto";
+
+                        const numeroProyecto = String(indice + 1).padStart(2, "0");
 
                         return (
                             <article
@@ -166,7 +191,7 @@ function Projects() {
                                 style={{
                                     "--position": posicion,
                                     "--distance": Math.abs(posicion),
-                                    transform: `translateX(calc(-50% + ${posicion === 0 ? 0 : (posicion === 1 ? 115 : posicion === -1 ? -115 : posicion === 2 ? 210 : -210)}px)) translateY(calc(-50% + ${Math.abs(posicion) * 26}px)) scale(${posicion === 0 ? 1 : posicion === 1 || posicion === -1 ? 0.94 : 0.88})`, 
+                                    transform: `translateX(calc(-50% + ${desplazamientoX}px)) translateY(calc(-50% + ${Math.abs(posicion) * 24}px)) scale(${escala})`,
                                     opacity: esVisible ? 1 : 0,
                                     zIndex: 30 - Math.abs(posicion),
                                     pointerEvents: esVisible ? "auto" : "none"
@@ -179,10 +204,17 @@ function Projects() {
                                     }
                                 }}
                             >
+                                <div className="retro-project-card-inner">
+                                    <div className="retro-project-meta">
+                                    <span className="project-index">{numeroProyecto}</span>
+                                    <span className="project-meta-status">
+                                        <span className="project-meta-dot"></span>
+                                        {estadoMeta}
+                                    </span>
+                                    <span className="project-meta-year">{proyecto.anio || "2026"}</span>
+                                </div>
+
                                 <div className={`retro-project-image ${proyecto.claseImagen}`}>
-                                    <div className="retro-window-bar">
-                                        <span></span><span></span><span></span>
-                                    </div>
                                     <div className="image-placeholder">
                                         {imagenProyecto ? (
                                             <img
@@ -201,7 +233,6 @@ function Projects() {
                                             <h2>{proyecto.titulo}</h2>
                                             <p>{proyecto.subtitulo || "Proyecto personal"}</p>
                                         </div>
-                                        <span className="project-year">{proyecto.anio || "2026"}</span>
                                     </div>
 
                                     <p className="retro-project-description">
@@ -265,6 +296,7 @@ function Projects() {
                                         )}
                                     </div>
                                 </div>
+                            </div>
                             </article>
                         );
                     })}

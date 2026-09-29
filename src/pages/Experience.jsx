@@ -12,8 +12,6 @@ import {
     FaCalendarDays,
     FaUser
 } from "react-icons/fa6";
-import black from "../assets/catblack.png";
-import white from "../assets/catwhite.png";
 import inventarioImg from "../assets/inventario.png";
 import appsscriptImg from "../assets/appsscript.png";
 import gestionpersonalImg from "../assets/gestionpersonal2.png";
@@ -202,12 +200,7 @@ function Experience() {
                                 }`}
                                 onClick={() => cambiarAño(año)}
                             >
-                                <span className="experience-year-icon">
-                                    <img
-                                        src={año === "2025" ? black : white}
-                                        alt={año === "2025" ? "Milo" : "Rocky"}
-                                    />
-                                </span>
+                                <span className="experience-year-icon"><FaFolderOpen /></span>
 
                                 <span className="experience-year-content">
                                     <strong>{año}</strong>
@@ -226,6 +219,20 @@ function Experience() {
                 </aside>
 
                 <section className="experience-main-card">
+                    <div className="experience-main-windowbar">
+                        <div className="experience-window-controls" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div className="experience-window-status" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
                     <div className="experience-main-top">
                         <div className="experience-main-index">
                             <span>
