@@ -1,3 +1,8 @@
+/* =========================================================
+   MAIN LAYOUT
+   Escritorio + ventanas + aplicaciones del escritorio
+   ========================================================= */
+
 .app-layout {
     --sidebar-width: 125px;
     min-height: 100vh;
@@ -20,12 +25,116 @@
     justify-content: center;
     padding: 14px 16px;
     background-color: #87bdf2;
-    background-image: url("../assets/fondo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    transition: background-image .45s ease;
 }
+
+/* ---------- DESKTOP ICONS ---------- */
+
+.desktop-icons {
+    position: absolute;
+    inset: 18px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    pointer-events: none;
+}
+
+.desktop-icon {
+    width: 94px;
+    min-height: 86px;
+    padding: 7px 6px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    color: #111111;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    pointer-events: auto;
+    text-align: center;
+    transition:
+        background .15s ease,
+        transform .15s ease;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, .25);
+    transform: translateY(-1px);
+}
+
+.desktop-icon:focus-visible {
+    outline: 2px solid #984df2;
+    outline-offset: 2px;
+}
+
+.desktop-icon-art {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #121016;
+    font-size: 31px;
+    filter: drop-shadow(2px 2px 0 rgba(255, 255, 255, .55));
+}
+
+.desktop-icon-art.folder {
+    color: #984df2;
+}
+
+.desktop-icon-art.file {
+    color: #f5f5f5;
+    text-shadow:
+        2px 0 #17131a,
+        -2px 0 #17131a,
+        0 2px #17131a,
+        0 -2px #17131a;
+}
+
+.desktop-icon-art.pdf {
+    color: #e85b63;
+    filter: drop-shadow(2px 2px 0 rgba(255, 255, 255, .62));
+}
+
+.desktop-icon-art.settings {
+    color: #111111;
+    font-size: 29px;
+    filter: drop-shadow(2px 2px 0 rgba(255, 255, 255, .62));
+}
+
+.desktop-icon-art.trash {
+    color: #f4f4f4;
+    text-shadow:
+        2px 0 #17131a,
+        -2px 0 #17131a,
+        0 2px #17131a,
+        0 -2px #17131a;
+}
+
+.desktop-icon-name {
+    max-width: 88px;
+    padding: 2px 4px;
+    background: rgba(255, 255, 255, .78);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    color: #151217;
+    font-size: 9px;
+    line-height: 1.35;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .95);
+}
+
+/* ---------- MAIN WINDOW ---------- */
 
 .main-window {
     position: absolute;
@@ -42,6 +151,7 @@
     box-shadow:
         0 10px 30px rgba(35, 35, 45, 0.10),
         0 2px 6px rgba(35, 35, 45, 0.06);
+    z-index: 10;
 }
 
 .main-window.maximized {
@@ -117,8 +227,637 @@
     background: #f7f7f8;
 }
 
+/* =========================================================
+   DESKTOP APPLICATIONS
+   ========================================================= */
+
+.desktop-app-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 9500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    box-sizing: border-box;
+    background: rgba(28, 18, 36, .22);
+    backdrop-filter: blur(2px);
+}
+
+.desktop-app {
+    width: min(680px, calc(100% - 30px));
+    max-height: min(720px, calc(100% - 30px));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #fbfafc;
+    border: 2px solid #17131a;
+    border-radius: 5px;
+    box-shadow: 8px 8px 0 rgba(23, 19, 26, .94);
+    color: #17131a;
+}
+
+.desktop-app-header {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 14px;
+    box-sizing: border-box;
+    background: #c49aff;
+    border-bottom: 2px solid #17131a;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.desktop-app-header button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #17131a;
+    background: #f7efff;
+    color: #17131a;
+    cursor: pointer;
+}
+
+.desktop-app-header button:hover {
+    background: #ffffff;
+}
+
+.desktop-app-body {
+    min-height: 0;
+    overflow: auto;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+.desktop-app-eyebrow {
+    margin-bottom: 7px;
+    color: #984df2;
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    line-height: 1.6;
+    letter-spacing: .5px;
+}
+
+.desktop-app h2 {
+    margin: 0 0 10px;
+    color: #17131a;
+    font-family: "Press Start 2P", monospace;
+    font-size: 19px;
+    line-height: 1.45;
+}
+
+.desktop-app-description {
+    margin: 0 0 24px;
+    color: #615866;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+/* ---------- SETTINGS ---------- */
+
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+}
+
+.wallpaper-option {
+    position: relative;
+    min-width: 0;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    border: 2px solid #cdb9d9;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #251b2c;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        transform .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+.wallpaper-option:hover {
+    transform: translateY(-2px);
+    border-color: #984df2;
+    box-shadow: 3px 3px 0 rgba(152, 77, 242, .17);
+}
+
+.wallpaper-option.selected {
+    border-color: #984df2;
+    box-shadow: 4px 4px 0 rgba(152, 77, 242, .18);
+}
+
+.wallpaper-preview {
+    width: 100%;
+    aspect-ratio: 1.55;
+    display: block;
+    border: 1px solid #17131a;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+}
+
+.wallpaper-preview.cielo {
+    background:
+        url("/src/assets/fondo.png")
+        center / cover
+        no-repeat;
+}
+
+.wallpaper-preview.atardecer {
+    background:
+        linear-gradient(rgba(223, 126, 181, .52), rgba(72, 47, 104, .44)),
+        url("/src/assets/fondo.png")
+        center / cover
+        no-repeat;
+}
+
+.wallpaper-preview.noche {
+    background:
+        linear-gradient(rgba(25, 30, 69, .76), rgba(13, 14, 31, .84)),
+        url("/src/assets/fondo.png")
+        center / cover
+        no-repeat;
+}
+
+.wallpaper-option-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wallpaper-option-text strong {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.wallpaper-option-text small {
+    color: #766b7c;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 7px;
+    line-height: 1.45;
+}
+
+.wallpaper-check {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    color: #984df2;
+    font-size: 10px;
+}
+
+.desktop-app-reset {
+    margin-top: 20px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    border: 2px solid #17131a;
+    background: #f0e6f8;
+    color: #17131a;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.desktop-app-reset:hover {
+    background: #e6d2f6;
+}
+
+/* ---------- CERTIFICATES ---------- */
+
+.certificate-folder-body {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fbfafc;
+}
+
+.certificate-folder-toolbar {
+    min-height: 40px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 14px;
+    box-sizing: border-box;
+    background: #f0e8f5;
+    border-bottom: 1px solid #d4bfdc;
+    color: #62566b;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.certificate-folder-grid {
+    min-height: 0;
+    overflow: auto;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    align-content: start;
+    gap: 18px 14px;
+    box-sizing: border-box;
+}
+
+.certificate-file {
+    min-width: 0;
+    min-height: 132px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    color: #2a2230;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    text-align: center;
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        transform .15s ease;
+}
+
+.certificate-file:hover {
+    background: #f4eafb;
+    border-color: #cbb4d9;
+    transform: translateY(-2px);
+}
+
+.certificate-file:focus-visible {
+    outline: 2px solid #984df2;
+    outline-offset: 2px;
+}
+
+.certificate-file-icon {
+    width: 54px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e85b63;
+    font-size: 44px;
+    filter: drop-shadow(2px 2px 0 rgba(23, 19, 26, .16));
+}
+
+.certificate-file-name {
+    width: 100%;
+    max-width: 155px;
+    color: #2a2230;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.certificate-file-type {
+    color: #8b7f90;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 6px;
+    line-height: 1.4;
+}
+
+.certificate-viewer {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ececee;
+}
+
+.certificate-viewer-toolbar {
+    min-height: 44px;
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: #f7f7f8;
+    border-bottom: 1px solid #c7c8cc;
+    color: #403747;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 7px;
+}
+
+.certificate-viewer-toolbar strong {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.certificate-back,
+.certificate-viewer-open,
+.certificate-viewer-download {
+    min-height: 29px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    border: 2px solid #17131a;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 7px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.certificate-back {
+    background: #ffffff;
+    color: #17131a;
+}
+
+.certificate-back:hover {
+    background: #f0e6f8;
+}
+
+.certificate-viewer-open {
+    background: #ffffff;
+    color: #17131a;
+}
+
+.certificate-viewer-open:hover {
+    background: #f0e6f8;
+}
+
+.certificate-viewer-download {
+    background: #b77cff;
+    color: #17131a;
+}
+
+.certificate-viewer-download:hover {
+    background: #c495ff;
+}
+
+.certificate-pdf-preview {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    height: 100%;
+    border: 0;
+    background: #ffffff;
+}
+
+.dark .certificate-folder-body {
+    background: #29242e;
+}
+
+.dark .certificate-folder-toolbar {
+    background: #362d40;
+    border-bottom-color: #55465d;
+    color: #c9bfce;
+}
+
+.dark .certificate-file {
+    color: #f2edf5;
+}
+
+.dark .certificate-file:hover {
+    background: #3a3142;
+    border-color: #665474;
+}
+
+.dark .certificate-file-name {
+    color: #f1ebf3;
+}
+
+.dark .certificate-file-type {
+    color: #aaa0ae;
+}
+
+.dark .certificate-file-icon {
+    color: #f0747c;
+}
+
+.dark .certificate-viewer {
+    background: #1e1f24;
+}
+
+.dark .certificate-viewer-toolbar {
+    background: #2d2e35;
+    border-bottom-color: #474952;
+    color: #ded7e2;
+}
+
+.dark .certificate-back,
+.dark .certificate-viewer-open {
+    border-color: #121016;
+    background: #302a34;
+    color: #f2edf5;
+}
+
+.dark .certificate-back:hover,
+.dark .certificate-viewer-open:hover {
+    background: #403447;
+}
+
+.dark .certificate-viewer-download {
+    border-color: #121016;
+    background: #ab69f0;
+    color: #17131a;
+}
+
+/* ---------- README ---------- */
+
+.readme-terminal {
+    min-height: 330px;
+    padding: 23px;
+    box-sizing: border-box;
+    background: #151515;
+    color: #efefef;
+    border: 2px solid #17131a;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    line-height: 1.9;
+}
+
+.readme-terminal p {
+    margin: 0 0 20px;
+}
+
+.readme-terminal p:first-child span,
+.readme-terminal p:last-child span {
+    color: #b77cff;
+}
+
+.readme-green {
+    color: #48d17a;
+}
+
+/* ---------- TRASH ---------- */
+
+.trash-empty {
+    min-height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.trash-empty svg {
+    color: #8a7a94;
+    font-size: 40px;
+}
+
+.trash-empty strong {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+}
+
+.trash-empty span {
+    color: #8f8495;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 8px;
+}
+
+
+/* ---------- CV APPLICATION ---------- */
+
+.cv-app {
+    width: min(820px, calc(100% - 30px));
+    height: min(780px, calc(100% - 30px));
+}
+
+.certificates-app {
+    width: min(920px, calc(100% - 30px));
+    height: min(820px, calc(100% - 30px));
+}
+
+.cv-app-body {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #eeeeef;
+}
+
+.cv-app-toolbar {
+    min-height: 42px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    background: #f7f7f8;
+    border-bottom: 1px solid #c7c8cc;
+    color: #4b4650;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.cv-app-download {
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    border: 2px solid #17131a;
+    background: #b77cff;
+    color: #17131a;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 7px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.cv-app-download:hover {
+    background: #c495ff;
+}
+
+.cv-preview {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    border: 0;
+    background: #ffffff;
+}
+
+.dark .cv-app-body {
+    background: #1e1f24;
+}
+
+.dark .cv-app-toolbar {
+    background: #2d2e35;
+    border-bottom-color: #474952;
+    color: #d9d5de;
+}
+
+.dark .cv-app-download {
+    border-color: #121016;
+    background: #ab69f0;
+    color: #17131a;
+}
+
+
+/* ---------- DARK MODE ---------- */
+
 .dark .app-layout {
     background: #202126;
+}
+
+.dark .desktop {
+    background-color: #161a32;
+}
+
+.dark .desktop-icon:hover {
+    background: rgba(31, 28, 40, .35);
+}
+
+.dark .desktop-icon-name {
+    background: rgba(27, 24, 34, .78);
+    color: #f3f4f6;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .9);
+}
+
+.dark .desktop-icon-art {
+    color: #f3f4f6;
+    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, .65));
+}
+
+.dark .desktop-icon-art.settings {
+    color: #f3f4f6;
+}
+
+.dark .desktop-icon-art.pdf {
+    color: #f0747c;
+}
+
+.dark .desktop-icon-art.folder {
+    color: #c084fc;
 }
 
 .dark .main-window {
@@ -153,6 +892,136 @@
     background: #2a2b30;
 }
 
+/* Desktop apps in dark mode */
+.dark .desktop-app-overlay {
+    background: rgba(5, 4, 9, .56);
+}
+
+.dark .desktop-app {
+    background: #29242e;
+    border-color: #665474;
+    box-shadow: 8px 8px 0 rgba(8, 5, 11, .92);
+    color: #f0ebf2;
+}
+
+.dark .desktop-app-header {
+    background: #3b3046;
+    border-bottom-color: #141017;
+    color: #f2edf5;
+}
+
+.dark .desktop-app-header button {
+    border-color: #5b4b64;
+    background: #302934;
+    color: #f3edf6;
+}
+
+.dark .desktop-app-header button:hover {
+    background: #423548;
+}
+
+.dark .desktop-app-eyebrow {
+    color: #c084fc;
+}
+
+.dark .desktop-app h2 {
+    color: #f4eff6;
+}
+
+.dark .desktop-app-description {
+    color: #bcb2c3;
+}
+
+.dark .wallpaper-option {
+    border-color: #5a4a63;
+    background: #302a34;
+    color: #f2edf5;
+}
+
+.dark .wallpaper-option:hover,
+.dark .wallpaper-option.selected {
+    border-color: #c084fc;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .26);
+}
+
+.dark .wallpaper-option-text small {
+    color: #aaa0ae;
+}
+
+.dark .wallpaper-check {
+    color: #c084fc;
+}
+
+.dark .desktop-app-reset {
+    border-color: #17131a;
+    background: #3d3046;
+    color: #f3edf5;
+}
+
+.dark .desktop-app-reset:hover {
+    background: #4a3853;
+}
+
+.dark .certificate-action {
+    border-color: #121016;
+    background: #ab69f0;
+    color: #17131a;
+}
+
+.dark .certificate-action:hover {
+    background: #ba7ef2;
+}
+
+.dark .certificate-download {
+    border-color: #121016;
+    background: #302a34;
+    color: #f2edf5;
+}
+
+.dark .certificate-download:hover {
+    background: #403447;
+}
+
+.dark .certificate-item {
+    border-color: #55465d;
+    background: #312b34;
+}
+
+.dark .certificate-icon {
+    border-color: #5b4b64;
+    background: #3c3047;
+    color: #c084fc;
+}
+
+.dark .certificate-info strong {
+    color: #f1ebf3;
+}
+
+.dark .certificate-info small {
+    color: #a89daa;
+}
+
+.dark .certificate-action {
+    border-color: #121016;
+    background: #ab69f0;
+}
+
+.dark .certificate-pending {
+    color: #aaa0ae;
+}
+
+.dark .readme-terminal {
+    background: #090a0e;
+    border-color: #4d4054;
+    color: #e9e5eb;
+}
+
+.dark .trash-empty svg {
+    color: #ad9eb6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
 @media (max-width: 900px) {
     .app-layout {
         --sidebar-width: 95px;
@@ -173,6 +1042,33 @@
         right: 6px;
         bottom: 6px;
     }
+
+    .desktop-icons {
+        inset: 12px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .certificates-app {
+        width: 100%;
+        height: calc(100% - 20px);
+    }
+    
+    .wallpaper-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-folder-grid {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .desktop-app-body {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -185,13 +1081,26 @@
         padding: 8px;
     }
 
-    .main-window {
-        height: calc(100vh - 90px);
-        border-radius: 6px;
+    .desktop-icons {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        min-height: 150px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        justify-items: center;
+        padding: 10px 0;
+        box-sizing: border-box;
     }
 
-    .main-window-header {
-        min-height: 36px;
+    .main-window {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: calc(100vh - 90px);
+        border-radius: 6px;
     }
 
     .main-window.maximized {
@@ -200,11 +1109,46 @@
         right: 8px;
         bottom: 8px;
     }
+
+    .desktop-app-overlay {
+        padding: 10px;
+    }
+
+    .desktop-app {
+        width: 100%;
+        max-height: calc(100% - 10px);
+    }
+
+    .certificate-item {
+        grid-template-columns: 38px minmax(0, 1fr);
+    }
+
+    .certificate-actions {
+        grid-column: 2;
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 520px) {
     .desktop {
         padding: 6px;
+    }
+
+    .desktop-icons {
+        min-height: 138px;
+        gap: 5px;
+    }
+
+    .desktop-icon {
+        width: 82px;
+    }
+
+    .desktop-icon-art {
+        font-size: 26px;
+    }
+
+    .desktop-icon-name {
+        font-size: 8px;
     }
 
     .main-window {
@@ -227,4 +1171,64 @@
         right: 6px;
         bottom: 6px;
     }
+
+    .desktop-app-body {
+        padding: 16px;
+    }
+
+    .desktop-app h2 {
+        font-size: 16px;
+    }
 }
+
+
+/* ---------- SETTINGS BUTTON ---------- */
+
+.settings-button {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    border: 2px solid #111111 !important;
+    border-left: 2px solid #111111 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    box-shadow: 4px 4px 0 #111111 !important;
+    cursor: pointer !important;
+    font-size: 20px !important;
+    transition:
+        transform .16s ease,
+        background .16s ease,
+        box-shadow .16s ease !important;
+}
+
+.settings-button:hover {
+    transform: translate(2px, 2px) !important;
+    background: #b77cff !important;
+    color: #111111 !important;
+    box-shadow: 2px 2px 0 #111111 !important;
+}
+
+.settings-button svg {
+    width: 21px !important;
+    height: 21px !important;
+}
+
+.dark .settings-button {
+    background: #24252e !important;
+    color: #f3f4f6 !important;
+    border-color: #111111 !important;
+    box-shadow: 4px 4px 0 #0b0b0b !important;
+}
+
+.dark .settings-button:hover {
+    background: #c084fc !important;
+    color: #111111 !important;
+    box-shadow: 2px 2px 0 #0b0b0b !important;
+}
+
