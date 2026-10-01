@@ -68,9 +68,6 @@ function Navbar({ estadoVentanas, abrirVentana }) {
                     <span className="navbar-title-main">
                         PORTAFOLIO MARCELA
                     </span>
-                    <span className="navbar-title-sub">
-                        PORTFOLIO OS
-                    </span>
                     <span className="navbar-title-line" />
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import {
     FaArrowLeft,
     FaArrowRight,
@@ -391,7 +392,9 @@ function Experience() {
                 </section>
             </section>
 
-            {modalAbierto && (
+            {modalAbierto &&
+                createPortal(
+
                 <div className="experience-modal-overlay" onClick={cerrarModal}>
                     <div
                         className="experience-modal"
@@ -462,7 +465,10 @@ function Experience() {
                         </div>
                     </div>
                 </div>
-            )}
+                    ,
+                    document.body
+                )}
+
         </main>
     )
 }

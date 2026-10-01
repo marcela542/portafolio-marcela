@@ -1436,3 +1436,359 @@
             100% 100%;
     }
 }
+
+/* =========================================================
+   RESPONSIVE UX — agregado sin modificar reglas anteriores
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .projects-header {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 18px;
+        padding: 0 28px;
+    }
+
+    .projects-header-description {
+        max-width: none;
+    }
+
+    .retro-project-card {
+        width: 350px;
+        height: 385px;
+    }
+}
+
+@media (max-width: 900px) {
+    .projects-header {
+        flex-basis: auto;
+        min-height: 120px;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 16px 22px;
+        align-items: center;
+    }
+
+    .projects-header-title {
+        min-height: 0;
+        padding-right: 0;
+        border-right: 0;
+    }
+
+    .projects-header-description {
+        display: none;
+    }
+
+    .projects-showcase {
+        overflow: hidden;
+    }
+
+    .retro-project-card {
+        width: 340px;
+        height: 390px;
+    }
+}
+
+@media (max-width: 760px) {
+    .projects-section {
+        height: auto;
+        min-height: 100%;
+        overflow: visible;
+    }
+
+    .projects-header {
+        min-height: 100px;
+        padding: 14px 16px;
+    }
+
+    .projects-header-title {
+        gap: 12px;
+    }
+
+    .projects-folder-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 31px;
+    }
+
+    .projects-header-title p {
+        font-size: 15px;
+    }
+
+    .projects-header-title h1 {
+        font-size: 8px;
+    }
+
+    .projects-showcase {
+        min-height: 560px;
+        height: 560px;
+        overflow: hidden;
+    }
+
+    .retro-dots,
+    .retro-note {
+        display: none;
+    }
+
+    .carousel-stage {
+        min-height: 500px;
+        height: 500px;
+    }
+
+    .retro-project-card {
+        top: 50%;
+        width: min(88vw, 370px);
+        height: 460px;
+    }
+
+    .retro-project-card.is-active {
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    .retro-project-card:not(.is-active) {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    .retro-project-image {
+        flex-basis: 155px;
+        height: 155px;
+    }
+
+    .retro-project-body {
+        padding: 13px 14px;
+    }
+
+    .retro-project-description {
+        font-size: 8px;
+        line-height: 1.65;
+    }
+
+    .retro-project-actions {
+        gap: 7px;
+    }
+
+    .project-button {
+        min-height: 38px;
+        padding: 0 10px;
+        font-size: 8px;
+    }
+
+    .carousel-arrow {
+        z-index: 60;
+    }
+
+    .project-modal-overlay {
+        padding: 10px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .project-modal {
+        width: 100%;
+        max-height: calc(100vh - 20px);
+        padding: 22px 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .projects-header {
+        min-height: 88px;
+        padding: 12px 14px;
+    }
+
+    .projects-header-title p {
+        font-size: 13px;
+    }
+
+    .projects-header-title h1 {
+        font-size: 7px;
+    }
+
+    .projects-showcase {
+        min-height: 540px;
+        height: 540px;
+    }
+
+    .carousel-stage {
+        min-height: 490px;
+        height: 490px;
+    }
+
+    .retro-project-card {
+        width: min(92vw, 350px);
+        height: 455px;
+    }
+
+    .retro-project-image {
+        flex-basis: 145px;
+        height: 145px;
+    }
+
+    .retro-project-meta {
+        flex-basis: 38px;
+        height: 38px;
+        padding: 0 10px;
+    }
+
+    .project-index,
+    .project-meta-year,
+    .project-meta-status {
+        font-size: 7px;
+    }
+
+    .retro-project-heading h2 {
+        font-size: 13px;
+    }
+
+    .retro-project-heading p,
+    .project-tags span {
+        font-size: 7px;
+    }
+
+    .retro-project-description {
+        font-size: 7.5px;
+        line-height: 1.65;
+    }
+
+    .retro-project-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .project-button {
+        width: 100%;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .carousel-arrow-left {
+        left: 6px;
+    }
+
+    .carousel-arrow-right {
+        right: 6px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE FINAL — CENTRAR PROYECTOS EN TABLET
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .projects-section {
+        height: 100%;
+        min-height: 0;
+    }
+
+    .projects-showcase {
+        flex: 0 1 auto;
+        min-height: 0;
+        height: min(580px, calc(100vh - 190px));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .carousel-stage {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+    }
+
+    .retro-project-card {
+        top: 50%;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .projects-section {
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .projects-showcase {
+        flex: 1 1 auto;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .carousel-stage {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .retro-project-card {
+        top: 50% !important;
+    }
+
+    .retro-project-card.is-active {
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+}
+
+
+/* =========================================================
+   PROYECTOS — SOLO TABLET
+   No modifica desktop ni celular
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .projects-showcase .carousel-arrow,
+    .projects-showcase .carousel-indicators,
+    .projects-showcase .retro-note,
+    .projects-showcase .retro-dots {
+        display: none !important;
+    }
+
+    .projects-showcase .carousel-stage {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 24px !important;
+        box-sizing: border-box !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px !important;
+        align-items: start !important;
+        justify-items: stretch !important;
+        overflow: visible !important;
+        perspective: none !important;
+    }
+
+    .projects-showcase .retro-project-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 390px !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        z-index: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+
+    .projects-showcase .retro-project-card.is-active,
+    .projects-showcase .retro-project-card.is-active:hover,
+    .projects-showcase .retro-project-card:not(.is-active):hover {
+        transform: translateY(-2px) !important;
+    }
+}

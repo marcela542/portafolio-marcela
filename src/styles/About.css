@@ -1154,3 +1154,129 @@
         font-size: 13px;
     }
 }
+
+
+/* =========================================================
+   RESPONSIVE EXTRA — ABOUT
+   Ajuste móvil de terminal y pestañas
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .about-tabs {
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+
+    .about-tab-terminal {
+        width: 100%;
+        min-height: 40px;
+        flex: 0 0 40px;
+        padding: 0 14px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #c7c4ca;
+    }
+
+    .about-tab-actions {
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+        height: 42px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+
+    .about-tab-actions::-webkit-scrollbar {
+        display: none;
+    }
+
+    .about-tab {
+        min-width: 0;
+        width: 33.3333%;
+        flex: 1 0 33.3333%;
+        min-height: 42px;
+        padding: 0 10px;
+        font-size: 8px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 430px) {
+    .about-tab-terminal {
+        min-height: 38px;
+        flex-basis: 38px;
+        font-size: 9px;
+    }
+
+    .about-tab {
+        min-height: 40px;
+        flex-basis: 33.3333%;
+        font-size: 7px;
+        padding: 0 6px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE FINAL — CENTRAR CONTENIDO EN TABLET
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .about-section {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-window {
+        height: min(91%, calc(100vh - 36px));
+        min-height: 0;
+    }
+
+    .about-panel {
+        display: grid;
+        align-content: center;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .about-section {
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .about-window {
+        width: min(96%, 980px);
+        height: min(88vh, 760px);
+        max-height: calc(100vh - 28px);
+    }
+
+    .about-panel {
+        min-height: 0;
+        display: grid;
+        align-content: center;
+    }
+
+    .about-profile-main {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-tabs {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .about-tab-actions {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}

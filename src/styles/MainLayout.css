@@ -1,8 +1,3 @@
-/* =========================================================
-   MAIN LAYOUT
-   Escritorio + ventanas + aplicaciones del escritorio
-   ========================================================= */
-
 .app-layout {
     --sidebar-width: 125px;
     min-height: 100vh;
@@ -36,12 +31,18 @@
 
 .desktop-icons {
     position: absolute;
-    inset: 18px;
+    top: 18px;
+    right: 18px;
+    left: auto;
+    width: 208px;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 94px);
+    justify-content: end;
+    align-items: start;
+    justify-items: center;
+    column-gap: 8px;
+    row-gap: 12px;
     pointer-events: none;
 }
 
@@ -83,9 +84,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #121016;
+    color: #27232b;
     font-size: 31px;
-    filter: drop-shadow(2px 2px 0 rgba(255, 255, 255, .55));
+    filter: drop-shadow(2px 2px 0 rgba(35, 31, 40, .35));
 }
 
 .desktop-icon-art.folder {
@@ -93,45 +94,49 @@
 }
 
 .desktop-icon-art.file {
-    color: #f5f5f5;
+    color: #f3f1f5;
     text-shadow:
-        2px 0 #17131a,
-        -2px 0 #17131a,
-        0 2px #17131a,
-        0 -2px #17131a;
+        2px 0 #2b2630,
+        -2px 0 #2b2630,
+        0 2px #2b2630,
+        0 -2px #2b2630,
+        1px 1px 0 #2b2630;
 }
 
 .desktop-icon-art.pdf {
     color: #e85b63;
-    filter: drop-shadow(2px 2px 0 rgba(255, 255, 255, .62));
+    filter: drop-shadow(2px 2px 0 rgba(35, 31, 40, .28));
 }
 
 .desktop-icon-art.settings {
-    color: #111111;
+    color: #4f4b54;
     font-size: 29px;
-    filter: drop-shadow(2px 2px 0 rgba(255, 255, 255, .62));
+    filter: drop-shadow(2px 2px 0 rgba(35, 31, 40, .30));
 }
 
 .desktop-icon-art.trash {
-    color: #f4f4f4;
+    color: #f1eff3;
     text-shadow:
-        2px 0 #17131a,
-        -2px 0 #17131a,
-        0 2px #17131a,
-        0 -2px #17131a;
+        2px 0 #2b2630,
+        -2px 0 #2b2630,
+        0 2px #2b2630,
+        0 -2px #2b2630,
+        1px 1px 0 #2b2630;
 }
 
 .desktop-icon-name {
     max-width: 88px;
-    padding: 2px 4px;
-    background: rgba(255, 255, 255, .78);
+    padding: 2px 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    color: #151217;
-    font-size: 9px;
+    color: #24212a;
+    font-size: 10px;
     line-height: 1.35;
-    font-weight: 700;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .95);
+    font-weight: 900;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .45);
 }
 
 /* ---------- MAIN WINDOW ---------- */
@@ -391,6 +396,20 @@
         no-repeat;
 }
 
+.wallpaper-preview.luna {
+    background:
+        url("/src/assets/luna.jpg")
+        center / cover
+        no-repeat;
+}
+
+.wallpaper-preview.paisaje {
+    background:
+        url("/src/assets/paisaje1.jpg")
+        center / cover
+        no-repeat;
+}
+
 .wallpaper-option-text {
     display: flex;
     flex-direction: column;
@@ -526,7 +545,7 @@
     max-width: 155px;
     color: #2a2230;
     font-family: "Courier New", Courier, monospace;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 700;
     line-height: 1.45;
 }
@@ -534,7 +553,7 @@
 .certificate-file-type {
     color: #8b7f90;
     font-family: "Courier New", Courier, monospace;
-    font-size: 6px;
+    font-size: 8px;
     line-height: 1.4;
 }
 
@@ -589,8 +608,11 @@
 }
 
 .certificate-back {
+    min-height: 36px;
+    padding: 0 14px;
     background: #ffffff;
     color: #17131a;
+    font-size: 9px;
 }
 
 .certificate-back:hover {
@@ -838,9 +860,10 @@
 }
 
 .dark .desktop-icon-name {
-    background: rgba(27, 24, 34, .78);
+    background: transparent;
     color: #f3f4f6;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, .9);
+    font-weight: 900;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
 }
 
 .dark .desktop-icon-art {
@@ -1232,3 +1255,635 @@
     box-shadow: 2px 2px 0 #0b0b0b !important;
 }
 
+/* =========================================================
+   RESPONSIVE UX — agregado sin modificar reglas anteriores
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .main-window {
+        top: 18px;
+        left: 18px;
+        width: calc(100% - 36px);
+        height: calc(100% - 36px);
+    }
+
+    .desktop-app-overlay {
+        padding: 18px;
+    }
+
+    .desktop-app {
+        width: min(760px, calc(100% - 24px));
+        max-height: calc(100% - 24px);
+    }
+
+    .certificate-folder-grid {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .app-layout {
+        --sidebar-width: 105px;
+    }
+
+    .desktop {
+        padding: 10px;
+    }
+
+    .main-window {
+        top: 14px;
+        left: 14px;
+        width: calc(100% - 28px);
+        height: calc(100% - 28px);
+    }
+
+    .main-window.maximized {
+        left: calc(var(--sidebar-width) + 6px);
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+    }
+
+    .desktop-icon {
+        width: 86px;
+        min-height: 82px;
+    }
+
+    .desktop-icons {
+        width: 190px;
+        grid-template-columns: repeat(2, 86px);
+        column-gap: 6px;
+        row-gap: 10px;
+    }
+
+    .desktop-app-overlay {
+        padding: 14px;
+    }
+
+    .certificates-app {
+        width: min(900px, calc(100% - 20px));
+        height: min(760px, calc(100% - 20px));
+    }
+}
+
+@media (max-width: 760px) {
+    .desktop {
+        display: block;
+        min-height: calc(100vh - 74px);
+        height: auto;
+        padding: 8px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    .desktop-icons {
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        left: auto;
+        width: 176px;
+        grid-template-columns: repeat(2, 82px);
+        column-gap: 6px;
+        row-gap: 6px;
+    }
+
+    .desktop:has(.main-window) .desktop-icons {
+        display: none;
+    }
+
+    .main-window {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        height: auto;
+        min-height: calc(100vh - 94px);
+        margin-top: 8px;
+        border-radius: 5px;
+    }
+
+    .main-window.maximized {
+        position: fixed;
+        inset: 8px;
+        left: 8px;
+        width: auto;
+        height: auto;
+    }
+
+    .main-window-content {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .desktop-app-overlay {
+        position: fixed;
+        inset: 0;
+        padding: 8px;
+        align-items: stretch;
+    }
+
+    .desktop-app {
+        width: 100%;
+        max-width: none;
+        max-height: none;
+        height: 100%;
+    }
+
+    .desktop-app-body {
+        padding: 18px;
+        overflow-y: auto;
+    }
+
+    .wallpaper-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .certificate-folder-grid {
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+        gap: 14px 10px;
+        padding: 16px;
+    }
+
+    .certificate-viewer-toolbar {
+        min-height: 0;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: center;
+        padding: 7px 8px;
+    }
+
+    .certificate-viewer-toolbar strong {
+        flex: 1 1 100%;
+        order: -1;
+        min-height: 20px;
+    }
+
+    .certificate-back,
+    .certificate-viewer-open,
+    .certificate-viewer-download {
+        min-height: 36px;
+        padding: 0 10px;
+        font-size: 8px;
+    }
+
+    .cv-app {
+        width: 100%;
+        height: 100%;
+    }
+
+    .cv-app-toolbar {
+        min-height: 42px;
+        flex-wrap: wrap;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .desktop {
+        min-height: calc(100vh - 74px);
+        padding: 6px;
+    }
+
+    .desktop-icons {
+        top: 8px;
+        right: 6px;
+        width: 160px;
+        grid-template-columns: repeat(2, 74px);
+        column-gap: 4px;
+    }
+
+    .desktop-icon {
+        width: 74px;
+        min-height: 76px;
+        gap: 5px;
+        padding: 6px 4px;
+    }
+
+    .desktop-icon-art {
+        width: 38px;
+        height: 38px;
+        font-size: 27px;
+    }
+
+    .desktop-icon-name {
+        max-width: 72px;
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    .main-window {
+        min-height: calc(100vh - 88px);
+        margin-top: 6px;
+    }
+
+    .main-window.maximized {
+        inset: 6px;
+    }
+
+    .main-window-header {
+        min-height: 36px;
+        padding: 0 8px 0 10px;
+        font-size: 10px;
+    }
+
+    .main-window-controls button {
+        width: 32px;
+        height: 28px;
+    }
+
+    .desktop-app-overlay {
+        padding: 6px;
+    }
+
+    .desktop-app-header {
+        min-height: 40px;
+        padding: 0 8px 0 11px;
+    }
+
+    .desktop-app-body {
+        padding: 15px 12px;
+    }
+
+    .desktop-app h2 {
+        font-size: 15px;
+    }
+
+    .desktop-app-description {
+        font-size: 8px;
+        line-height: 1.7;
+    }
+
+    .wallpaper-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .wallpaper-option {
+        padding: 8px;
+    }
+
+    .certificate-folder-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 8px;
+        padding: 10px;
+    }
+
+    .certificate-file {
+        min-height: 118px;
+        padding: 8px 5px;
+    }
+
+    .certificate-file-icon {
+        width: 48px;
+        height: 56px;
+        font-size: 38px;
+    }
+
+    .certificate-file-name {
+        max-width: 100%;
+        font-size: 9px;
+    }
+
+    .certificate-file-type {
+        font-size: 7px;
+    }
+
+    .certificate-viewer-toolbar strong {
+        font-size: 8px;
+    }
+
+    .certificate-back,
+    .certificate-viewer-open,
+    .certificate-viewer-download {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: 8px;
+    }
+
+    .readme-terminal {
+        min-height: 320px;
+        padding: 16px 14px;
+        font-size: 9px;
+        line-height: 1.8;
+        overflow-x: auto;
+    }
+}
+
+.dark .desktop-app-body,
+.dark .certificate-folder-body {
+    scrollbar-color: #6b5a75 #28232c;
+}
+
+/* =========================================================
+   RESPONSIVE FINAL — CONTENCIÓN Y SCROLL
+   ========================================================= */
+
+html,
+body,
+#root {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.app-layout,
+.app-content,
+.desktop,
+.main-window,
+.main-window-content {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .app-layout {
+        width: 100%;
+        max-width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .app-content {
+        height: 100vh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .desktop {
+        width: 100%;
+        height: 100vh;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main-window {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .main-window-content {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .app-layout {
+        width: 100%;
+        max-width: 100vw;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .app-content {
+        width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .desktop {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main-window,
+    .desktop-app-overlay,
+    .desktop-app {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    html,
+    body,
+    #root {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .app-layout {
+        width: 100%;
+        max-width: 100vw;
+        height: 100vh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .app-content {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .desktop {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: 100vh;
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main-window {
+        max-width: calc(100% - 56px);
+        box-sizing: border-box;
+    }
+
+    .main-window-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .desktop-app-overlay {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 18px;
+        box-sizing: border-box;
+    }
+
+    .desktop-app {
+        width: min(820px, calc(100vw - var(--sidebar-width) - 36px));
+        max-width: 100%;
+        max-height: calc(100vh - 36px);
+    }
+}
+
+@media (max-width: 700px) {
+    html,
+    body,
+    #root {
+        overflow-x: hidden;
+    }
+}
+
+
+.desktop-icon-art.changelog {
+    color: #6d6872;
+    font-size: 29px;
+    filter: drop-shadow(2px 2px 0 rgba(35, 31, 40, .28));
+}
+
+.desktop-clock {
+    position: absolute;
+    right: 22px;
+    bottom: 18px;
+    z-index: 3;
+    min-width: 140px;
+    padding: 10px 13px 9px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    background: rgba(248, 247, 249, .88);
+    border: 1px solid rgba(51, 47, 57, .55);
+    box-shadow: 3px 3px 0 rgba(23, 19, 26, .34);
+    color: #24212a;
+    font-family: "Courier New", Courier, monospace;
+    backdrop-filter: blur(2px);
+}
+
+.desktop-clock-system {
+    color: #80658f;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.desktop-clock strong {
+    color: #17131a;
+    font-family: "Press Start 2P", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 400;
+}
+
+.desktop-clock small {
+    color: #5f5864;
+    font-size: 7px;
+    line-height: 1.4;
+    letter-spacing: .45px;
+    font-weight: 700;
+}
+
+.changelog-terminal {
+    min-height: 330px;
+    padding: 23px;
+    box-sizing: border-box;
+    overflow: auto;
+    background: #151515;
+    color: #efefef;
+    border: 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 10px;
+    line-height: 1.9;
+}
+
+.changelog-terminal p {
+    margin: 0 0 20px;
+}
+
+.changelog-terminal p:first-child span {
+    color: #b77cff;
+}
+
+.changelog-terminal p:last-child span {
+    color: #b77cff;
+}
+
+.dark .desktop-icon-art.changelog {
+    color: #b3adb8;
+}
+
+.dark .desktop-clock {
+    background: rgba(35, 31, 41, .9);
+    border-color: rgba(184, 165, 196, .42);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, .45);
+    color: #eeeaf0;
+}
+
+.dark .desktop-clock-system {
+    color: #c084fc;
+}
+
+.dark .desktop-clock strong {
+    color: #f3eff5;
+}
+
+.dark .desktop-clock small {
+    color: #c1b9c5;
+}
+
+.dark .changelog-terminal {
+    background: #090a0e;
+    color: #e9e5eb;
+}
+
+@media (max-width: 700px) {
+    .desktop-clock {
+        right: 12px;
+        bottom: 12px;
+        min-width: 116px;
+        padding: 8px 10px 7px;
+    }
+
+    .desktop-clock-system {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .desktop-clock strong {
+        font-size: 9px;
+    }
+
+    .desktop-clock small {
+        font-size: 6px;
+    }
+
+    .desktop-icon-art.changelog {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 430px) {
+    .desktop-clock {
+        right: 8px;
+        bottom: 8px;
+        min-width: 100px;
+        padding: 7px 8px 6px;
+    }
+
+    .desktop-clock-system {
+        font-size: 5px;
+    }
+
+    .desktop-clock strong {
+        font-size: 8px;
+    }
+
+    .desktop-clock small {
+        font-size: 5px;
+    }
+}

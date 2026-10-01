@@ -854,3 +854,286 @@
         display: none;
     }
 }
+
+/* =========================================================
+   RESPONSIVE UX — agregado sin modificar reglas anteriores
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .home-page {
+        width: calc(100% - 28px);
+    }
+
+    .hero-left {
+        padding: 0 22px 0 36px;
+    }
+
+    .hero-left h1 {
+        font-size: clamp(42px, 5vw, 62px);
+    }
+
+    .hero-description {
+        max-width: 500px;
+    }
+
+    .hero-right {
+        width: min(600px, 100%);
+    }
+}
+
+@media (max-width: 1000px) {
+    .home-page {
+        width: min(760px, calc(100% - 28px));
+        height: auto;
+    }
+
+    .home-hero {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 34px;
+        padding: 28px 0 36px;
+        overflow: visible;
+    }
+
+    .hero-left {
+        width: 100%;
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 0;
+        transform: none;
+    }
+
+    .hero-right {
+        width: min(660px, 100%);
+        height: 540px;
+        margin: 0 auto;
+        transform: none;
+    }
+}
+
+@media (max-width: 760px) {
+    .home-page {
+        width: calc(100% - 20px);
+    }
+
+    .home-hero {
+        gap: 24px;
+        padding: 20px 0 28px;
+    }
+
+    .hero-left {
+        max-width: none;
+    }
+
+    .hero-left h1 {
+        font-size: 42px;
+        line-height: .95;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        max-width: none;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .hero-terminal {
+        max-width: none;
+        min-height: 42px;
+        height: auto;
+        padding: 10px 11px;
+        line-height: 1.5;
+        overflow-x: auto;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .pixel-button {
+        min-height: 42px;
+    }
+
+    .hero-stats {
+        max-width: none;
+    }
+
+    .hero-right {
+        width: 100%;
+        height: 500px;
+    }
+
+    .profile-window {
+        width: 330px;
+        max-width: 76%;
+    }
+
+    .focus-window {
+        left: auto;
+        right: 0;
+        width: 38%;
+        min-width: 210px;
+    }
+
+    .cat-message {
+        right: 5%;
+        left: auto;
+    }
+
+    .my-cats {
+        right: 7%;
+        left: auto;
+    }
+
+    .tech-window {
+        right: 0;
+        left: auto;
+        width: 52%;
+        min-width: 230px;
+    }
+}
+
+@media (max-width: 520px) {
+    .home-page {
+        width: calc(100% - 14px);
+    }
+
+    .home-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding: 16px 0 24px;
+    }
+
+    .hero-left h1 {
+        font-size: 35px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-label {
+        font-size: 8px;
+        flex-wrap: wrap;
+    }
+
+    .hero-description {
+        font-size: 10px;
+        line-height: 1.75;
+    }
+
+    .hero-terminal {
+        font-size: 9px;
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .pixel-button {
+        width: 100%;
+    }
+
+    .social-links {
+        margin-top: 14px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        height: 76px;
+    }
+
+    .hero-right {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .profile-window,
+    .focus-window {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        max-width: none;
+    }
+
+    .profile-window {
+        order: 1;
+    }
+
+    .focus-window {
+        order: 2;
+    }
+
+    .profile-placeholder {
+        aspect-ratio: 1 / 1;
+        height: auto;
+    }
+
+    .cat-message,
+    .my-cats,
+    .tech-window {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE FINAL — CENTRAR CONTENIDO EN TABLET
+   ========================================================= */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .home-page {
+        height: auto;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-hero {
+        width: 100%;
+        min-height: calc(100vh - 150px);
+        align-content: center;
+        justify-content: center;
+        gap: 22px;
+        padding: 24px 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 700px) {
+    .home-page {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-hero {
+        min-height: calc(100vh - 120px);
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .home-page {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-hero {
+        min-height: 0;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+    }
+}

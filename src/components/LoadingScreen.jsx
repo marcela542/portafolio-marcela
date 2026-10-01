@@ -13,7 +13,7 @@ function LoadingScreen() {
             </div>
 
             <p className="loading-text">
-                CARGANDO EXPERIENCIA...
+                INICIANDO SISTEMA...
             </p>
         </div>
     );

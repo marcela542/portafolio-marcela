@@ -16,6 +16,8 @@ import {
 
 import Navbar from "../components/Navbar";
 import fondo from "../assets/fondo.png";
+import atardecer from "../assets/atardecer.jpg";
+import paisaje1 from "../assets/paisaje1.jpg";
 
 import "../styles/MainLayout.css";
 
@@ -94,14 +96,12 @@ const fondosEscritorio = {
 
     atardecer: {
         nombre: "Atardecer",
-        backgroundImage:
-            `linear-gradient(rgba(223, 126, 181, .30), rgba(72, 47, 104, .18)), url(${fondo})`
+        backgroundImage: `url(${atardecer})`
     },
 
-    noche: {
-        nombre: "Noche",
-        backgroundImage:
-            `linear-gradient(rgba(25, 30, 69, .66), rgba(13, 14, 31, .74)), url(${fondo})`
+    paisaje: {
+        nombre: "Paisaje",
+        backgroundImage: `url(${paisaje1})`
     }
 };
 
@@ -124,18 +124,19 @@ function MainLayout() {
     const navigate = useNavigate();
 
     const [estadoVentanas, setEstadoVentanas] = useState(() => ({
-        "/": pathname === "/" ? "open" : "closed",
-        "/sobre-mi": pathname === "/sobre-mi" ? "open" : "closed",
-        "/experiencia": pathname === "/experiencia" ? "open" : "closed",
-        "/proyectos": pathname === "/proyectos" ? "open" : "closed",
-        "/contacto": pathname === "/contacto" ? "open" : "closed"
+        "/": "closed",
+        "/sobre-mi": "closed",
+        "/experiencia": "closed",
+        "/proyectos": "closed",
+        "/contacto": "closed"
     }));
 
     const [ventanaMaximizada, setVentanaMaximizada] = useState(false);
     const [fondoEscritorio, setFondoEscritorio] = useState(obtenerFondoGuardado);
 
-    const [appEscritorioAbierta, setAppEscritorioAbierta] = useState(null);
+    const [appEscritorioAbierta, setAppEscritorioAbierta] = useState("readme");
     const [certificadoSeleccionado, setCertificadoSeleccionado] = useState(null);
+    const [fechaHora, setFechaHora] = useState(() => new Date());
 
     const rutaAnterior = useRef(pathname);
 
@@ -170,6 +171,30 @@ function MainLayout() {
             // La interfaz sigue funcionando aunque el navegador no permita guardar.
         }
     }, [fondoEscritorio]);
+
+    useEffect(() => {
+        const intervalo = setInterval(() => {
+            setFechaHora(new Date());
+        }, 1000);
+
+        return () => clearInterval(intervalo);
+    }, []);
+
+    const horaActual = fechaHora.toLocaleTimeString("es-CO", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    });
+
+    const fechaActual = fechaHora
+        .toLocaleDateString("es-CO", {
+            weekday: "short",
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        })
+        .replace(/\./g, "")
+        .toUpperCase();
 
     const abrirVentana = (ruta) => {
         setEstadoVentanas((estado) => {
@@ -243,7 +268,8 @@ function MainLayout() {
 
     const mostrarVentana =
         ventanaActual &&
-        estadoVentanas[pathname] === "open";
+        estadoVentanas[pathname] === "open" &&
+        appEscritorioAbierta !== "readme";
 
     return (
         <div className="app-layout">
@@ -335,6 +361,27 @@ function MainLayout() {
                         </span>
                     </button>
 
+                    <button
+                        type="button"
+                        className="desktop-icon"
+                        onClick={() => abrirAplicacionEscritorio("changelog")}
+                        aria-label="Abrir changelog"
+                    >
+                        <span className="desktop-icon-art changelog">
+                            <FaFileLines />
+                        </span>
+
+                        <span className="desktop-icon-name">
+                            changelog.txt
+                        </span>
+                    </button>
+
+                </div>
+
+                <div className="desktop-clock" aria-label="Fecha y hora actual">
+                    <span className="desktop-clock-system">SYSTEM.TIME</span>
+                    <strong>{horaActual}</strong>
+                    <small>{fechaActual}</small>
                 </div>
 
                 {mostrarVentana && (
@@ -616,19 +663,126 @@ function MainLayout() {
                                 <p>Hola, soy Marcela.</p>
 
                                 <p>
-                                    Este portafolio está construido como un
-                                    pequeño sistema operativo personal.
+                                    Este portafolio está construido como un pequeño sistema
+                                    operativo personal para presentar mi recorrido profesional,
+                                    proyectos, habilidades y aprendizaje.
                                 </p>
 
                                 <p>
-                                    La barra lateral contiene las aplicaciones
-                                    principales y el escritorio guarda
-                                    documentos y utilidades.
+                                    La barra lateral contiene las aplicaciones principales
+                                    y el escritorio guarda documentos y utilidades.
+                                </p>
+
+                                <p>
+                                    EXPLORA EL SISTEMA
+                                </p>
+
+                                <p>
+                                    &gt; Sobre mí
+                                    <br />
+                                    &nbsp;&nbsp;Conoce mi perfil, formación y enfoque.
+                                </p>
+
+                                <p>
+                                    &gt; Experiencia
+                                    <br />
+                                    &nbsp;&nbsp;Revisa mi recorrido y las experiencias que han fortalecido
+                                    <br />
+                                    &nbsp;&nbsp;mi forma de desarrollar soluciones.
+                                </p>
+
+                                <p>
+                                    &gt; Proyectos
+                                    <br />
+                                    &nbsp;&nbsp;Explora los proyectos que he construido y aprendido a desarrollar.
+                                </p>
+
+                                <p>
+                                    &gt; Contacto
+                                    <br />
+                                    &nbsp;&nbsp;Encuentra mis medios de contacto y enlaces profesionales.
+                                </p>
+
+                                <p>
+                                    ARCHIVOS DEL ESCRITORIO
+                                </p>
+
+                                <p>
+                                    &gt; Marcela-CV.pdf
+                                    <br />
+                                    &nbsp;&nbsp;Hoja de vida.
+                                </p>
+
+                                <p>
+                                    &gt; Certificados
+                                    <br />
+                                    &nbsp;&nbsp;Formación y certificaciones.
+                                </p>
+
+                                <p>
+                                    &gt; changelog.txt
+                                    <br />
+                                    &nbsp;&nbsp;Registro de cambios del sistema.
                                 </p>
 
                                 <p>
                                     <span className="readme-green">STATUS:</span>{" "}
                                     aprendiendo continuamente...
+                                </p>
+
+                                <p>
+                                    <span>C:\Marcela\Desktop&gt;</span> _
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {appEscritorioAbierta === "changelog" && (
+                    <section className="desktop-app-overlay">
+                        <div className="desktop-app changelog-app">
+                            <div className="desktop-app-header">
+                                <strong>changelog.txt</strong>
+
+                                <button
+                                    type="button"
+                                    onClick={cerrarAplicacionEscritorio}
+                                    aria-label="Cerrar changelog"
+                                >
+                                    <FaXmark />
+                                </button>
+                            </div>
+
+                            <div className="changelog-terminal">
+                                <p>
+                                    <span>C:\Marcela\Desktop&gt;</span>{" "}
+                                    type changelog.txt
+                                </p>
+
+                                <p>
+                                    PORTAFOLIO OS
+                                    <br />
+                                    CHANGELOG
+                                </p>
+
+                                <p>
+                                    v1.0
+                                    <br />
+                                    - estructura inicial
+                                    <br />
+                                    - módulos principales
+                                    <br />
+                                    - escritorio interactivo
+                                </p>
+
+                                <p>
+                                    v1.1
+                                    <br />
+                                    - nuevos proyectos
+                                    <br />
+                                    - nuevos fondos
+                                    <br />
+                                    - mejoras visuales
                                 </p>
 
                                 <p>
