@@ -4,179 +4,128 @@
     width: 100%;
     height: 100%;
     min-height: 0;
-    padding: 0 28px 18px;
+    padding: 20px 26px 22px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
-    background-color: #fbf9fd;
-
-    background-image:
-        linear-gradient(
-            to right,
-            rgba(125, 91, 145, 0.045) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            to bottom,
-            rgba(125, 91, 145, 0.045) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            135deg,
-            transparent 0 49.2%,
-            rgba(152, 77, 242, 0.035) 49.5%,
-            transparent 49.8%
-        ),
-
-        linear-gradient(
-            315deg,
-            transparent 0 49.2%,
-            rgba(152, 77, 242, 0.028) 49.5%,
-            transparent 49.8%
-        ),
-
-        radial-gradient(
-            circle at 88% 12%,
-            rgba(166, 112, 220, 0.075),
-            transparent 22%
-        ),
-
-        radial-gradient(
-            circle at 12% 88%,
-            rgba(166, 112, 220, 0.05),
-            transparent 20%
-        );
-
-    background-size:
-        36px 36px,
-        36px 36px,
-        520px 520px,
-        520px 520px,
-        100% 100%,
-        100% 100%;
-
-    background-position:
-        center,
-        center,
-        right top,
-        left bottom,
-        center,
-        center;
-
-    background-repeat:
-        repeat,
-        repeat,
-        repeat,
-        repeat,
-        no-repeat,
-        no-repeat;
-
-    color: #17131a;
-    font-family: "Silkscreen", monospace;
+    background: #f3f1f5;
+    color: #19171c;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
 }
 
-/* ---------- HEADER ---------- */
-
 .experience-header {
-    flex: 0 0 104px;
+    flex: 0 0 auto;
+    min-height: 82px;
     display: grid;
-    grid-template-columns: 1fr minmax(420px, 1.15fr) 52px;
+    grid-template-columns: minmax(260px, 1fr) minmax(300px, .9fr) auto;
     align-items: center;
-    gap: 28px;
-    padding: 0 10px;
+    gap: 22px;
+    padding: 0 8px 16px;
     box-sizing: border-box;
-    border-bottom: 1px solid #e0d7e7;
+    border-bottom: 2px solid #27242b;
 }
 
 .experience-title {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
     min-width: 0;
 }
 
 .experience-title-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #8c4ce8;
-    font-size: 31px;
-}
-
-.experience-title h1 {
-    margin: 0 0 7px;
-    font-family: "Press Start 2P", monospace;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.45;
-}
-
-.experience-title p {
-    margin: 0;
-    color: #766d7d;
-    font-size: 9px;
-}
-
-.experience-intro {
-    padding: 11px 15px;
-    border-left: 3px solid #a45af1;
-    background: #f3ebf9;
-    color: #62596b;
-    font-size: 8px;
-    line-height: 1.75;
-}
-
-.experience-header-icon {
     width: 44px;
     height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-self: end;
-    border: 2px solid #1d1722;
-    border-radius: 10px;
-    background: #f2e8fa;
-    box-shadow: 3px 3px 0 #cdb9da;
-    color: #8c4ce8;
-    font-size: 17px;
+    border: 2px solid #26232a;
+    background: #d6c0e7;
+    box-shadow: 4px 4px 0 #26232a;
+    color: #7140a2;
+    font-size: 19px;
 }
 
-/* ---------- YEARS / FOLDERS ---------- */
+.experience-title h1 {
+    margin: 0 0 6px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.experience-title p {
+    margin: 0;
+    color: #756e7b;
+    font-size: 9px;
+}
+
+.experience-intro {
+    padding: 10px 13px;
+    border-left: 3px solid #8d4cc8;
+    background: #ffffff;
+    color: #645d69;
+    font-size: 8px;
+    line-height: 1.65;
+}
+
+.experience-header-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #26232a;
+    background: #ffffff;
+    box-shadow: 3px 3px 0 #26232a;
+    color: #7e45ae;
+    font-size: 16px;
+}
 
 .experience-content {
     flex: 1 1 auto;
     min-height: 0;
-    display: flex;
-    flex-direction: column;
-    padding-top: 14px;
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 18px;
+    padding-top: 18px;
 }
 
 .experience-years {
     position: relative;
-    min-height: 66px;
-    height: 66px;
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    padding: 0 0 0 12px;
+    min-width: 0;
+    min-height: 0;
+    padding: 20px 14px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    background: #ebe5ef;
+    border: 2px solid #2a2530;
+    box-shadow: 5px 6px 0 #2a2530;
+    overflow: hidden;
+}
+
+.experience-years::before {
+    content: "EXPERIENCE / HISTORY";
+    display: block;
+    margin-bottom: 8px;
+    margin-left: 30px;
+    color: #6e4b82;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .7px;
 }
 
 .experience-years::after {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 5px;
-    height: 2px;
-    background: #9f73bd;
-    z-index: 0;
+    left: 34px;
+    top: 72px;
+    bottom: 24px;
+    width: 2px;
+    background: #b9a8c2;
 }
 
 .experience-years-line {
@@ -186,56 +135,76 @@
 .experience-year-tab {
     position: relative;
     z-index: 1;
-    width: 190px;
-    height: 64px;
-    min-height: 64px;
+    width: 100%;
+    min-height: 78px;
     display: grid;
-    grid-template-columns: 34px 1fr;
+    grid-template-columns: 32px minmax(0, 1fr);
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
+    gap: 10px;
+    padding: 10px 8px 10px 6px;
     box-sizing: border-box;
-    border: 2px solid #d7c0e3;
-    border-bottom-color: #a772c8;
-    border-radius: 14px 14px 0 0;
-    background: #fffdfd;
-    color: #17131a;
+    border: 1px solid #c8b7d1;
+    border-radius: 0;
+    background: #ffffff;
+    color: #2b2530;
     text-align: left;
-    font-family: "Silkscreen", monospace;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
     cursor: pointer;
-    transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+    transition: background .18s ease, transform .18s ease, border-color .18s ease;
 }
 
 .experience-year-tab:hover {
-    transform: translateY(-2px);
-    background: #faf5ff;
+    transform: translateX(2px);
+    background: #f4edf8;
+    border-color: #b89dcc;
 }
 
 .experience-year-tab.active {
-    background: linear-gradient(180deg, #9c55ef 0%, #b97ff0 100%);
-    border-color: #8b4de7;
-    border-bottom-color: #8b4de7;
-    color: #ffffff;
-    box-shadow: 0 3px 0 rgba(116, 73, 149, .14);
+    background: #d7b7e8;
+    border-color: #9b72b8;
+    color: #2a2130;
+    box-shadow: 4px 4px 0 #6d596f;
 }
 
 .experience-year-icon {
-    width: 30px;
-    height: 30px;
+    position: relative;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #9b6bc4;
-    font-size: 18px;
+    border: 2px solid #9e87af;
+    border-radius: 50%;
+    background: #ebe5ef;
+    color: #7d5e8f;
+    font-size: 10px;
+}
+
+.experience-year-icon::before {
+    content: "";
+    position: absolute;
+    left: -13px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #c3b2ce;
+    border-radius: 50%;
+    background: #ebe5ef;
 }
 
 .experience-year-tab.active .experience-year-icon {
-    color: #ffffff;
+    border-color: #6d4388;
+    background: #eadcf3;
+    color: #6d4388;
+}
+
+.experience-year-tab.active .experience-year-icon::before {
+    border-color: #6d4388;
+    background: #d7b7e8;
 }
 
 .experience-year-icon img {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
     display: block;
     image-rendering: pixelated;
@@ -244,59 +213,53 @@
 .experience-year-content {
     display: flex;
     flex-direction: column;
-    gap: 3px;
-    line-height: 1;
+    gap: 5px;
+    min-width: 0;
 }
 
 .experience-year-content strong {
     font-family: "Press Start 2P", monospace;
-    font-size: 12px;
-    line-height: 1.35;
+    font-size: 10px;
+    line-height: 1.45;
 }
 
 .experience-year-content small {
-    color: #63586d;
+    color: #6e6772;
     font-size: 7px;
-    line-height: 1.3;
+    line-height: 1.35;
 }
 
 .experience-year-tab.active .experience-year-content small {
-    color: rgba(255, 255, 255, .88);
+    color: #654874;
 }
 
 .experience-year-arrow {
     display: none;
 }
 
-/* ---------- MAIN ARCHIVE WINDOW ---------- */
-
 .experience-main-card {
     position: relative;
-    flex: 1 1 auto;
     min-width: 0;
     min-height: 0;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    background: rgba(255, 253, 254, .97);
-    border: 2px solid #cdb4dc;
-    border-radius: 14px;
-    box-shadow:
-        0 0 0 4px rgba(176, 125, 228, .07),
-        4px 5px 0 rgba(88, 62, 102, .18);
+    background: #ffffff;
+    border: 2px solid #201d24;
+    border-radius: 0;
+    box-shadow: 6px 7px 0 #201d24;
     overflow: hidden;
 }
 
 .experience-main-windowbar {
-    flex: 0 0 29px;
-    height: 29px;
+    flex: 0 0 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 11px;
     box-sizing: border-box;
-    background: #eee4f5;
-    border-bottom: 1px solid #d3bfdc;
+    background: #ded8e2;
+    border-bottom: 2px solid #201d24;
 }
 
 .experience-window-controls,
@@ -307,12 +270,12 @@
 }
 
 .experience-window-controls span {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     box-sizing: border-box;
-    border: 1px solid #8d6da0;
+    border: 1px solid #4f4754;
     border-radius: 50%;
-    background: #c084fc;
+    background: #a77bc0;
 }
 
 .experience-window-controls span:nth-child(2),
@@ -321,30 +284,27 @@
 }
 
 .experience-window-status span {
-    width: 12px;
+    width: 10px;
     height: 4px;
-    border-radius: 2px;
-    background: #c8b0d5;
+    background: #8e8393;
 }
-
-/* ---------- MAIN HEADER ---------- */
 
 .experience-main-top {
     flex: 0 0 auto;
     display: grid;
-    grid-template-columns: 72px minmax(0, 1fr) auto;
+    grid-template-columns: 58px minmax(0, 1fr) auto;
     align-items: center;
     gap: 14px;
-    padding: 14px 20px 13px;
+    padding: 14px 18px 12px;
     box-sizing: border-box;
-    border-bottom: 1px solid #e1d7e7;
+    border-bottom: 2px solid #ded9e1;
 }
 
 .experience-main-index {
     display: flex;
     align-items: baseline;
     gap: 2px;
-    color: #9152e6;
+    color: #8442b6;
     font-family: "Press Start 2P", monospace;
 }
 
@@ -353,7 +313,7 @@
 }
 
 .experience-main-index small {
-    color: #756582;
+    color: #8d8391;
     font-size: 6px;
 }
 
@@ -365,40 +325,44 @@
 }
 
 .experience-main-icon {
-    width: 27px;
-    height: 27px;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #9152e6;
-    font-size: 18px;
+    border: 1px solid #aa91bb;
+    background: #efe6f4;
+    color: #7d3fae;
+    font-size: 14px;
 }
 
 .experience-main-title h2 {
     margin: 0 0 4px;
-    color: #17131a;
+    color: #1b1820;
     font-family: "Press Start 2P", monospace;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 .experience-main-title p {
     margin: 0;
-    color: #7e7485;
+    color: #746d79;
     font-size: 8px;
 }
 
 .experience-main-year {
+    min-width: 88px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
-    min-width: 102px;
-    padding: 7px 10px;
-    border: 1px solid #dac6e4;
-    border-radius: 8px;
-    background: #faf5ff;
-    color: #8b4de3;
+    padding: 7px 9px;
+    border: 1px solid #9a82a8;
+    border-radius: 0;
+    background: #f0e7f5;
+    color: #723ca1;
 }
 
 .experience-main-year span {
@@ -408,24 +372,22 @@
 }
 
 .experience-main-year small {
-    color: #93879e;
+    color: #91869a;
     font-size: 6px;
 }
 
 .experience-main-year strong {
-    color: #46374f;
+    color: #352c3a;
     font-size: 8px;
 }
-
-/* ---------- CONTENT COLUMNS ---------- */
 
 .experience-main-content {
     flex: 1 1 auto;
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, .97fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1fr);
     gap: 0;
-    padding: 20px 22px 13px;
+    padding: 18px;
     box-sizing: border-box;
 }
 
@@ -435,34 +397,41 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid #dcc7e7;
-    border-radius: 11px;
-    background: #f5eff8;
+    border: 2px solid #252129;
+    border-radius: 0;
+    background: #eee8f2;
 }
 
 .experience-visual-bar {
-    height: 18px;
-    flex: 0 0 18px;
+    height: 24px;
+    flex: 0 0 24px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 5px;
-    padding: 0 8px;
+    justify-content: space-between;
+    padding: 0 9px;
     box-sizing: border-box;
-    background: #e2d1ef;
-    border-bottom: 1px solid #d1bddb;
+    background: #cbc0d2;
+    border-bottom: 2px solid #252129;
+}
+
+.experience-visual-bar::before {
+    content: "PREVIEW.EXE";
+    color: #4c4350;
+    font-size: 7px;
+    font-weight: 700;
 }
 
 .experience-visual-bar span {
     width: 8px;
     height: 8px;
-    border: 1px solid #81708d;
-    border-radius: 2px;
+    margin-left: 3px;
+    border: 1px solid #6f6275;
+    border-radius: 0;
     background: #ffffff;
 }
 
 .experience-visual-bar span:first-child {
-    background: #8d50e2;
+    background: #8d4bc1;
 }
 
 .experience-image-placeholder {
@@ -472,19 +441,19 @@
     align-items: stretch;
     justify-content: stretch;
     overflow: hidden;
-    background: #f8f4fa;
+    background: #f8f5fa;
 }
 
 .experience-image-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     display: block;
 }
 
 .experience-image-placeholder > div {
-    width: 82%;
-    height: 72%;
+    width: 78%;
+    height: 68%;
     min-height: 150px;
     margin: auto;
     display: flex;
@@ -492,48 +461,48 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: 1px dashed #b9a9c2;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, .68);
+    border: 1px dashed #a28ea9;
+    background: #ffffff;
     text-align: center;
 }
 
 .experience-image-placeholder span {
-    color: #655777;
+    color: #5d4f65;
     font-family: "Press Start 2P", monospace;
-    font-size: 9px;
+    font-size: 8px;
     line-height: 1.6;
 }
 
 .experience-image-placeholder small {
-    color: #978b9e;
+    color: #918795;
     font-size: 8px;
 }
 
-/* Right column starts with a subtle archive divider. */
 .experience-information {
     min-width: 0;
     min-height: 0;
     display: flex;
     flex-direction: column;
-    padding: 3px 0 0 24px;
-    border-left: 1px solid #e3d9e9;
+    padding: 2px 0 0 20px;
+    border-left: 2px solid #d8d0dc;
 }
 
 .experience-information-block {
-    padding: 0 0 15px 0;
+    padding: 0 0 15px;
     margin: 0 0 16px;
-    border-bottom: 1px solid #e3d9e9;
+    border-bottom: 1px solid #ded7e1;
 }
 
 .experience-information-block h3 {
     position: relative;
-    margin: 0 0 11px;
-    padding-left: 15px;
-    color: #1b1620;
-    font-family: "Courier New", monospace;
-    font-size: 13px;
+    margin: 0 0 10px;
+    padding-left: 13px;
+    color: #242029;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
     letter-spacing: .2px;
+    text-transform: uppercase;
 }
 
 .experience-information-block h3::before {
@@ -542,14 +511,13 @@
     left: 0;
     top: 2px;
     width: 3px;
-    height: 17px;
-    border-radius: 2px;
-    background: #984df2;
+    height: 14px;
+    background: #8c45bd;
 }
 
 .experience-information-block p {
     margin: 0;
-    color: #645b69;
+    color: #655e69;
     font-size: 9px;
     line-height: 1.75;
 }
@@ -557,23 +525,23 @@
 .experience-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 6px;
 }
 
 .experience-stack span {
-    padding: 7px 11px;
-    border: 1px solid #d5bde2;
-    border-radius: 8px;
-    background: #fbf7ff;
-    color: #5f5267;
-    font-size: 8px;
-    font-weight: 800;
+    padding: 6px 9px;
+    border: 1px solid #bda8c9;
+    border-radius: 0;
+    background: #f5eef8;
+    color: #5c4c65;
+    font-size: 7px;
+    font-weight: 700;
 }
 
 .experience-facts {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 11px;
+    gap: 8px;
     margin-top: auto;
 }
 
@@ -582,16 +550,16 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 11px;
-    border: 1px solid #ddd0e8;
-    border-radius: 9px;
-    background: #fbf8fd;
+    padding: 10px;
+    border: 1px solid #c6b8cb;
+    border-radius: 0;
+    background: #faf8fb;
 }
 
 .experience-facts svg {
     flex-shrink: 0;
-    color: #8b4ce8;
-    font-size: 14px;
+    color: #8244ae;
+    font-size: 13px;
 }
 
 .experience-facts span {
@@ -602,30 +570,29 @@
 }
 
 .experience-facts small {
-    color: #95899d;
-    font-size: 7px;
+    color: #93899a;
+    font-size: 6px;
 }
 
 .experience-facts strong {
     overflow: hidden;
-    color: #413647;
-    font-size: 8px;
+    color: #44394a;
+    font-size: 7px;
     line-height: 1.4;
     text-overflow: ellipsis;
 }
 
-/* ---------- FOOTER / ACTIONS ---------- */
-
 .experience-main-bottom {
     flex: 0 0 auto;
     margin-top: auto;
-    padding: 10px 22px 13px;
+    padding: 10px 18px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 14px;
     box-sizing: border-box;
-    border-top: 1px solid #e1d7e7;
+    border-top: 2px solid #ddd6e0;
+    background: #fbfafc;
 }
 
 .experience-project-switcher {
@@ -635,55 +602,54 @@
 }
 
 .experience-project-switcher button {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #d6c0e3;
-    border-radius: 8px;
-    background: #fbf6ff;
-    color: #8d4ce1;
+    border: 1px solid #9a85a5;
+    border-radius: 0;
+    background: #ffffff;
+    color: #77409f;
     cursor: pointer;
 }
 
 .experience-project-switcher button:hover {
-    background: #efe0fb;
+    background: #eee4f4;
 }
 
 .experience-project-switcher span {
     min-width: 34px;
     text-align: center;
-    color: #766b7d;
+    color: #736b78;
     font-size: 7px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .experience-detail-button {
-    min-height: 40px;
+    min-height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 0 18px;
-    border: 2px solid #7144a7;
-    border-radius: 8px;
-    background: linear-gradient(180deg, #9d4cf0 0%, #8b43dc 100%);
-    box-shadow: 3px 4px 0 rgba(75, 40, 104, .2);
-    color: #ffffff;
-    font-family: "Silkscreen", monospace;
-    font-size: 8px;
+    padding: 0 16px;
+    border: 2px solid #2a2430;
+    border-radius: 0;
+    background: #caa9df;
+    box-shadow: 3px 3px 0 #2a2430;
+    color: #261d2c;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 7px;
     font-weight: 700;
     cursor: pointer;
-    transition: transform .15s ease, filter .15s ease;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
 .experience-detail-button:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.04);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #2a2430;
+    background: #d7bce8;
 }
-
-/* ---------- MODAL ---------- */
 
 .experience-modal-overlay {
     position: fixed;
@@ -693,8 +659,8 @@
     align-items: center;
     justify-content: center;
     padding: 24px;
-    background: rgba(28, 18, 36, .46);
-    backdrop-filter: blur(5px);
+    background: rgba(25, 20, 29, .58);
+    backdrop-filter: blur(4px);
 }
 
 .experience-modal {
@@ -704,45 +670,46 @@
     overflow-y: auto;
     padding: 32px;
     box-sizing: border-box;
-    background: #fffdfd;
-    border: 2px solid #ceb7db;
-    border-radius: 14px;
-    box-shadow: 7px 8px 0 rgba(80, 54, 96, .18);
+    background: #ffffff;
+    border: 2px solid #211d24;
+    border-radius: 0;
+    box-shadow: 7px 8px 0 #211d24;
 }
 
 .experience-modal-close {
     position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 36px;
-    height: 36px;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #cbb4d8;
-    border-radius: 8px;
-    background: #f4ebfa;
-    color: #4c3d54;
+    border: 1px solid #9782a1;
+    border-radius: 0;
+    background: #efe6f3;
+    color: #4d4054;
     cursor: pointer;
 }
 
 .experience-modal-close:hover {
-    background: #e4d0f3;
+    background: #dfcaeb;
 }
 
 .experience-modal-label {
     margin: 0 50px 7px 0;
-    color: #8b49dd;
+    color: #8140ae;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
     font-size: 8px;
-    font-weight: 900;
-    letter-spacing: 1.3px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .experience-modal h2 {
     margin: 0 0 6px;
     font-family: "Press Start 2P", monospace;
-    font-size: 21px;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -760,7 +727,10 @@
     position: relative;
     margin: 0 0 10px;
     padding-left: 13px;
-    font-size: 10px;
+    color: #242029;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    font-size: 9px;
+    font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -772,13 +742,13 @@
     top: 1px;
     width: 3px;
     height: 13px;
-    border-radius: 2px;
-    background: #984df2;
+    background: #8b46bb;
 }
 
 .experience-modal-text {
     margin: 0;
     color: #605965;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
     font-size: 9px;
     line-height: 1.75;
 }
@@ -797,7 +767,7 @@
 
 .experience-modal-feature > span {
     flex-shrink: 0;
-    color: #8b4ce8;
+    color: #8244ae;
     font-size: 10px;
     font-weight: 900;
 }
@@ -805,6 +775,7 @@
 .experience-modal-feature p {
     margin: 0;
     color: #605965;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
     font-size: 9px;
     line-height: 1.55;
 }
@@ -817,400 +788,350 @@
 
 .experience-modal-tags span {
     padding: 7px 9px;
-    border: 1px solid #d2c0de;
-    border-radius: 7px;
-    background: #faf7fc;
+    border: 1px solid #bfaaca;
+    border-radius: 0;
+    background: #f5edf8;
     color: #514657;
-    font-size: 8px;
-    font-weight: 800;
-}
-
-
-/* =========================================================
-   MODAL — TEXTO DE LECTURA LEGIBLE
-   ========================================================= */
-
-.experience-modal-subtitle,
-.experience-modal-text,
-.experience-modal-feature p {
     font-family: "IBM Plex Mono", "Courier New", monospace;
-    font-weight: 400;
-    letter-spacing: 0;
+    font-size: 8px;
+    font-weight: 700;
 }
-
-/* El resto mantiene la tipografía retro del modal. */
-.experience-modal-label,
-.experience-modal h2,
-.experience-modal-section h3,
-.experience-modal-feature > span,
-.experience-modal-tags span {
-    font-family: "Press Start 2P", "Courier New", monospace;
-}
-
-/* ---------- DARK MODE ---------- */
 
 .dark .experience-section {
-    background-color: #1d1822;
-
-    background-image:
-        linear-gradient(
-            to right,
-            rgba(210, 190, 225, 0.035) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            to bottom,
-            rgba(210, 190, 225, 0.035) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            135deg,
-            transparent 0 49.2%,
-            rgba(192, 132, 252, 0.045) 49.5%,
-            transparent 49.8%
-        ),
-
-        linear-gradient(
-            315deg,
-            transparent 0 49.2%,
-            rgba(192, 132, 252, 0.035) 49.5%,
-            transparent 49.8%
-        ),
-
-        radial-gradient(
-            circle at 88% 12%,
-            rgba(142, 91, 187, 0.12),
-            transparent 22%
-        ),
-
-        radial-gradient(
-            circle at 12% 88%,
-            rgba(142, 91, 187, 0.08),
-            transparent 20%
-        );
-
-    background-size:
-        36px 36px,
-        36px 36px,
-        520px 520px,
-        520px 520px,
-        100% 100%,
-        100% 100%;
-
-    background-position:
-        center,
-        center,
-        right top,
-        left bottom,
-        center,
-        center;
-
-    background-repeat:
-        repeat,
-        repeat,
-        repeat,
-        repeat,
-        no-repeat,
-        no-repeat;
-
-    color: #eeeaf1;
+    background: #17151a;
+    color: #f0edf2;
 }
 
 .dark .experience-header {
-    border-bottom-color: #3b3342;
+    border-bottom-color: #3a3440;
+}
+
+.dark .experience-title-icon {
+    border-color: #111014;
+    background: #5a4864;
+    box-shadow: 4px 4px 0 #0d0b10;
+    color: #ddbaf3;
 }
 
 .dark .experience-title h1 {
     color: #f2edf5;
 }
 
-.dark .experience-title p,
-.dark .experience-main-title p {
-    color: #aaa1b0;
-}
-
-.dark .experience-title-icon,
-.dark .experience-main-icon {
-    color: #c084fc;
+.dark .experience-title p {
+    color: #a59ca9;
 }
 
 .dark .experience-intro {
-    background: #2d2435;
-    border-left-color: #c084fc;
-    color: #c7bfcd;
+    background: #222027;
+    border-left-color: #b985db;
+    color: #beb5c4;
 }
 
 .dark .experience-header-icon {
-    border-color: #4d4055;
-    background: #30263a;
-    box-shadow: 3px 3px 0 #0d0a11;
-    color: #c084fc;
+    border-color: #111014;
+    background: #232027;
+    box-shadow: 3px 3px 0 #0d0b10;
+    color: #d0a8ef;
+}
+
+.dark .experience-years {
+    background: #332d38;
+    border-color: #514656;
+    box-shadow: 5px 6px 0 #17131b;
+}
+
+.dark .experience-years::before {
+    margin-left: 30px;
+    color: #d8c3e1;
 }
 
 .dark .experience-years::after {
-    background: #75558a;
+    background: #6f6078;
 }
 
 .dark .experience-year-tab {
-    background: #29252e;
-    border-color: #51415b;
-    border-bottom-color: #75558a;
-    color: #f1edf3;
+    background: #403744;
+    border-color: #65576c;
+    color: #f2edf4;
 }
 
 .dark .experience-year-tab:hover {
-    background: #342b3a;
+    background: #453b4a;
 }
 
 .dark .experience-year-tab.active {
-    background: linear-gradient(180deg, #9c61d8 0%, #a879dc 100%);
-    border-color: #a978da;
-    color: #23192b;
+    background: #b391c8;
+    border-color: #d0b4dc;
+    color: #241b29;
+    box-shadow: 4px 4px 0 #17131b;
 }
 
 .dark .experience-year-icon {
-    color: #c99bea;
+    border-color: #806f89;
+    background: #332d38;
+    color: #d0bfda;
+}
+
+.dark .experience-year-icon::before {
+    border-color: #c3b1cc;
+    background: #332d38;
 }
 
 .dark .experience-year-tab.active .experience-year-icon {
-    color: #2a1d32;
+    border-color: #4d3657;
+    background: #cbb2d9;
+    color: #4d3657;
+}
+
+.dark .experience-year-tab.active .experience-year-icon::before {
+    border-color: #5b3d6b;
+    background: #b391c8;
 }
 
 .dark .experience-year-content small {
-    color: #bdb3c5;
+    color: #c6bbc9;
 }
 
 .dark .experience-year-tab.active .experience-year-content small {
-    color: #493652;
+    color: #594263;
 }
 
 .dark .experience-main-card {
-    background: #26222b;
-    border-color: #5d4c67;
-    box-shadow:
-        0 0 0 4px rgba(167, 111, 211, .08),
-        4px 5px 0 rgba(8, 5, 11, .35);
+    background: #242127;
+    border-color: #0d0b10;
+    box-shadow: 6px 7px 0 #09070b;
 }
 
 .dark .experience-main-windowbar {
-    background: #332b39;
-    border-bottom-color: #4f4257;
+    background: #353039;
+    border-bottom-color: #0d0b10;
 }
 
 .dark .experience-window-controls span {
-    border-color: #6e5b78;
-    background: #b77de7;
+    border-color: #6d5d74;
+    background: #a77bc0;
 }
 
 .dark .experience-window-controls span:nth-child(2),
 .dark .experience-window-controls span:nth-child(3) {
-    background: #3c3442;
+    background: #47404c;
 }
 
 .dark .experience-window-status span {
-    background: #65536e;
+    background: #74687a;
 }
 
 .dark .experience-main-top {
-    border-bottom-color: #463b4d;
+    border-bottom-color: #47404b;
 }
 
 .dark .experience-main-index {
-    color: #c084fc;
+    color: #cf9df1;
 }
 
 .dark .experience-main-index small {
-    color: #a38fae;
+    color: #9c8ba4;
+}
+
+.dark .experience-main-icon {
+    border-color: #665572;
+    background: #332b39;
+    color: #d2a5ef;
 }
 
 .dark .experience-main-title h2 {
-    color: #f3eef5;
+    color: #f0ebf2;
+}
+
+.dark .experience-main-title p {
+    color: #a9a0af;
 }
 
 .dark .experience-main-year {
-    background: #352c3d;
-    border-color: #624f6f;
-    color: #c084fc;
+    border-color: #6a5774;
+    background: #342b3a;
+    color: #d4a9ef;
 }
 
 .dark .experience-main-year small {
-    color: #9d90a6;
+    color: #9d91a3;
 }
 
 .dark .experience-main-year strong {
-    color: #ece6f1;
+    color: #eee7f0;
 }
 
 .dark .experience-visual {
-    background: #2f2934;
-    border-color: #5a4a63;
+    border-color: #0d0b10;
+    background: #302a33;
 }
 
 .dark .experience-visual-bar {
-    background: #473655;
-    border-bottom-color: #49374f;
+    background: #49404f;
+    border-bottom-color: #0d0b10;
+}
+
+.dark .experience-visual-bar::before {
+    color: #ded4e2;
 }
 
 .dark .experience-visual-bar span {
-    border-color: #6b5b74;
-    background: #37313a;
+    border-color: #7a6b80;
+    background: #342d37;
 }
 
 .dark .experience-visual-bar span:first-child {
-    background: #b77de7;
+    background: #b482d1;
 }
 
 .dark .experience-image-placeholder {
-    background: #28242c;
+    background: #28242b;
 }
 
 .dark .experience-image-placeholder > div {
-    background: rgba(33, 29, 37, .8);
-    border-color: #61556a;
+    background: #211e24;
+    border-color: #62566a;
 }
 
 .dark .experience-image-placeholder span {
-    color: #d0c7d5;
+    color: #d0c6d5;
+}
+
+.dark .experience-image-placeholder small {
+    color: #9a909f;
 }
 
 .dark .experience-information {
-    border-left-color: #473b4f;
+    border-left-color: #4c4351;
 }
 
 .dark .experience-information-block {
-    border-bottom-color: #453a4c;
+    border-bottom-color: #453d49;
 }
 
 .dark .experience-information-block h3 {
-    color: #eeeaf1;
-}
-
-.dark .experience-information-block h3::before {
-    background: #c084fc;
-}
-
-.dark .experience-information-block p {
-    color: #c0b7c5;
-}
-
-.dark .experience-stack span {
-    background: #302933;
-    border-color: #665474;
-    color: #e2d9e8;
-}
-
-.dark .experience-facts > div {
-    background: #302b34;
-    border-color: #514553;
-}
-
-.dark .experience-facts svg {
-    color: #c084fc;
-}
-
-.dark .experience-facts small {
-    color: #aaa0ae;
-}
-
-.dark .experience-facts strong {
     color: #eee8f1;
 }
 
+.dark .experience-information-block h3::before {
+    background: #c18ce6;
+}
+
+.dark .experience-information-block p {
+    color: #c3bac8;
+}
+
+.dark .experience-stack span {
+    border-color: #685572;
+    background: #312a34;
+    color: #ddd4e2;
+}
+
+.dark .experience-facts > div {
+    border-color: #514755;
+    background: #302a33;
+}
+
+.dark .experience-facts svg {
+    color: #c18ce6;
+}
+
+.dark .experience-facts small {
+    color: #9f94a4;
+}
+
+.dark .experience-facts strong {
+    color: #eee7f1;
+}
+
 .dark .experience-main-bottom {
-    border-top-color: #453a4c;
+    border-top-color: #453d49;
+    background: #211e25;
 }
 
 .dark .experience-project-switcher button {
-    background: #302937;
-    border-color: #665474;
-    color: #c084fc;
+    border-color: #665572;
+    background: #2d2731;
+    color: #c18ce6;
 }
 
 .dark .experience-project-switcher button:hover {
-    background: #3b3043;
+    background: #39303e;
 }
 
 .dark .experience-project-switcher span {
-    color: #b9aebe;
+    color: #aaa0ae;
 }
 
 .dark .experience-detail-button {
-    border-color: #69418d;
-    background: linear-gradient(180deg, #a75eea 0%, #9851da 100%);
-    box-shadow: 3px 4px 0 rgba(9, 5, 13, .42);
+    border-color: #120e16;
+    background: #aa7fc3;
+    box-shadow: 3px 3px 0 #0b080e;
+    color: #1b1320;
+}
+
+.dark .experience-detail-button:hover {
+    background: #bb95d1;
 }
 
 .dark .experience-modal-overlay {
-    background: rgba(6, 4, 9, .72);
+    background: rgba(5, 4, 7, .78);
 }
 
 .dark .experience-modal {
-    background: #29242e;
-    border-color: #62506d;
-    box-shadow: 7px 8px 0 rgba(7, 4, 10, .42);
+    background: #242127;
+    border-color: #0d0b10;
+    box-shadow: 7px 8px 0 #080609;
 }
 
 .dark .experience-modal-close {
-    border-color: #5f4e69;
-    background: #372e3d;
-    color: #eeeaf1;
+    border-color: #65556e;
+    background: #342b38;
+    color: #eee8f1;
 }
 
 .dark .experience-modal-close:hover {
-    background: #4a3851;
+    background: #47394d;
 }
 
 .dark .experience-modal-label,
 .dark .experience-modal-feature > span {
-    color: #c084fc;
+    color: #c38ee8;
 }
 
 .dark .experience-modal h2,
 .dark .experience-modal-section h3 {
-    color: #f0eaf3;
+    color: #f0ebf2;
 }
 
 .dark .experience-modal-section h3::before {
-    background: #c084fc;
+    background: #c18ce6;
 }
 
 .dark .experience-modal-subtitle,
 .dark .experience-modal-text,
 .dark .experience-modal-feature p {
-    color: #c4bbc9;
+    color: #c2b8c7;
 }
 
 .dark .experience-modal-tags span {
-    background: #322b36;
-    border-color: #665474;
-    color: #e3dbe8;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-
-.dark .experience-modal-subtitle,
-.dark .experience-modal-text,
-.dark .experience-modal-feature p {
-    font-family: "IBM Plex Mono", "Courier New", monospace;
-    font-weight: 400;
-    letter-spacing: 0;
+    border-color: #665572;
+    background: #302a34;
+    color: #dfd6e3;
 }
 
 @media (max-width: 1050px) {
     .experience-header {
-        grid-template-columns: 1fr 1fr 46px;
-        gap: 18px;
+        grid-template-columns: minmax(230px, 1fr) minmax(260px, .85fr) auto;
+        gap: 16px;
+    }
+
+    .experience-content {
+        grid-template-columns: 160px minmax(0, 1fr);
     }
 
     .experience-main-content {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .experience-information {
-        padding-left: 18px;
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
     }
 }
 
@@ -1219,39 +1140,51 @@
         height: auto;
         min-height: 100%;
         overflow: visible;
-        padding: 0 14px 16px;
+        padding: 16px 14px 18px;
     }
 
     .experience-header {
-        flex-basis: auto;
+        min-height: 0;
         grid-template-columns: 1fr;
         gap: 10px;
-        padding: 16px 6px;
+        padding: 0 4px 14px;
     }
 
-    .experience-header-icon,
-    .experience-intro {
+    .experience-intro,
+    .experience-header-icon {
         display: none;
     }
 
     .experience-content {
-        padding-top: 12px;
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .experience-years {
-        min-height: 60px;
-        height: 60px;
-        padding-left: 0;
+        min-height: 112px;
+        padding: 14px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: 10px;
+        box-shadow: 4px 5px 0 #17141a;
+    }
+
+    .experience-years::before {
+        grid-column: 1 / -1;
+        margin-bottom: -2px;
+    }
+
+    .experience-years::after {
+        display: none;
     }
 
     .experience-year-tab {
-        width: 50%;
-        height: 58px;
-        min-height: 58px;
+        min-height: 68px;
     }
 
     .experience-main-card {
-        min-height: 700px;
+        min-height: 680px;
     }
 
     .experience-main-content {
@@ -1262,10 +1195,8 @@
     .experience-information {
         padding: 0;
         border-left: 0;
-    }
-
-    .experience-visual {
-        min-height: 270px;
+        border-top: 2px solid #d8d0dc;
+        padding-top: 16px;
     }
 }
 
@@ -1278,33 +1209,14 @@
         font-size: 8px;
     }
 
-    .experience-year-tab {
-        padding: 7px 11px;
-    }
-
-    .experience-year-icon {
-        width: 25px;
-    }
-
-    .experience-year-content strong {
-        font-size: 10px;
-    }
-
-    .experience-year-content small {
-        font-size: 6px;
-    }
-
     .experience-main-top {
-        grid-template-columns: 46px minmax(0, 1fr);
+        grid-template-columns: 44px minmax(0, 1fr);
     }
 
     .experience-main-year {
         grid-column: 2;
         justify-self: start;
-    }
-
-    .experience-main-content {
-        padding: 14px;
+        min-width: 82px;
     }
 
     .experience-facts {
@@ -1322,5 +1234,9 @@
 
     .experience-modal-feature-list {
         grid-template-columns: 1fr;
+    }
+
+    .experience-modal {
+        padding: 26px 18px 22px;
     }
 }

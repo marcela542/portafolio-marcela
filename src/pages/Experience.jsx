@@ -24,23 +24,27 @@ const experiences = [
         type: "Proyecto académico",
         title: "Sistema de Inventario",
         subtitle: "Proyecto académico · SENA",
-        summary: "Primer acercamiento al desarrollo de una aplicación web para organizar y digitalizar la gestión de elementos tecnológicos, préstamos y reservas.",
+        summary: "Aplicación web desarrollada durante mi formación para digitalizar la gestión de equipos y usuarios, incluyendo carga masiva, inventario, préstamos, reservas, consultas y reportes.",
         technologies: ["PHP", "JavaScript", "MySQL", "Bootstrap"],
         icon: <FaBoxOpen />,
         details: {
             type: "Proyecto académico · SENA",
-            text: "Durante mi formación en Análisis y Desarrollo de Software en el SENA trabajé en un sistema de inventario para pasar procesos manuales a una aplicación web. La experiencia me permitió integrar interfaz, lógica y base de datos en un mismo desarrollo y entender cómo estructurar un sistema a partir de necesidades funcionales.",
+            text: "Durante mi formación en Análisis y Desarrollo de Software en el SENA participé en el desarrollo de un sistema web para transformar procesos manuales de inventario en una solución digital. El proyecto se construyó a partir de los requerimientos funcionales del módulo de inventario y permitió integrar interfaz, lógica de negocio y base de datos en una misma aplicación. Trabajamos con PHP, programación orientada a objetos y arquitectura MVC para mantener el código organizado y facilitar la separación de responsabilidades. La plataforma fue desarrollada y probada en entorno local; no se realizó un despliegue a hosting.",
             features: [
-                "Comprensión y organización de requerimientos para el sistema.",
-                "Diseño de la estructura de datos para la información del inventario.",
-                "Desarrollo de la lógica de registro y consulta de información.",
-                "Trabajo con préstamos, reservas, salidas y devoluciones como flujos del sistema.",
-                "Validación de datos y control de la información registrada.",
-                "Integración entre PHP, JavaScript y MySQL.",
-                "Aprendizaje sobre cómo convertir procesos manuales en una solución web.",
-                "Aplicación de buenas prácticas de organización durante el desarrollo."
+                "Análisis y organización de los requerimientos funcionales del módulo de inventario.",
+                "Desarrollo de la aplicación en PHP utilizando programación orientada a objetos y arquitectura MVC.",
+                "Gestión de equipos y usuarios dentro del sistema de inventario.",
+                "Implementación de carga masiva mediante archivos, con selección, vista previa, validaciones y guardado de información.",
+                "Uso de plantillas para facilitar la carga masiva de equipos y usuarios.",
+                "Validación de formatos, datos incompletos, duplicados y otras condiciones antes de procesar la información.",
+                "Implementación de búsquedas, filtros y consultas sobre la información almacenada.",
+                "Generación de reportes para consultar y descargar información del inventario.",
+                "Gestión de préstamos, reservas, salidas y devoluciones como parte de los flujos del sistema.",
+                "Incorporación de alertas relacionadas con la disponibilidad de equipos según las necesidades del inventario.",
+                "Diseño de una interfaz clara y fácil de utilizar, cuidando jerarquía visual, distribución, botones y coherencia de colores.",
+                "Aprendizaje sobre cómo convertir requerimientos y procesos manuales en una solución web estructurada."
             ],
-            stack: ["PHP", "JavaScript", "MySQL", "Bootstrap"]
+            stack: ["PHP", "JavaScript", "MySQL", "HTML5", "CSS3", "Bootstrap", "MVC", "POO"]
         }
     },
     {
