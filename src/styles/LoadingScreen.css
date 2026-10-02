@@ -45,7 +45,7 @@
     width: 0;
     height: 100%;
     background: #b77cff;
-    animation: loadingProgress 2s steps(8, end) forwards;
+    animation: loadingProgress 5s steps(8, end) forwards;
 }
 
 .loading-text {

@@ -9,7 +9,7 @@ function App() {
     useEffect(() => {
         const tiempo = setTimeout(() => {
             setCargando(false);
-        }, 2000);
+        }, 5000);
 
         return () => clearTimeout(tiempo);
     }, []);
