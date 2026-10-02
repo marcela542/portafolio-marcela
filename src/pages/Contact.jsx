@@ -11,6 +11,7 @@ import {
     FaRotateRight
 } from "react-icons/fa6";
 import marioVideo from "../assets/mario.mp4";
+import marioPoster from "../assets/mario-poster.webp";
 import "../styles/Contact.css";
 
 const API_URL = import.meta.env.DEV
@@ -171,6 +172,7 @@ function Contact() {
                             <div className="contact-visual-placeholder">
                                 <video
                                     src={marioVideo}
+                                    poster={marioPoster}
                                     autoPlay
                                     loop
                                     muted
