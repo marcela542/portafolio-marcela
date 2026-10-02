@@ -1,5 +1,5 @@
 .app-layout {
-    --sidebar-width: 125px;
+    --sidebar-width: 110px;
     min-height: 100vh;
     display: grid;
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
@@ -90,7 +90,7 @@
 }
 
 .desktop-icon-art.folder {
-    color: #984df2;
+    color: #faf19e;
 }
 
 .desktop-icon-art.file {
@@ -399,6 +399,21 @@
 .wallpaper-preview.paisaje {
     background:
         url("/src/assets/paisaje1.webp")
+        center / cover
+        no-repeat;
+}
+
+.wallpaper-preview.luna {
+    background:
+        url("../assets/luna.webp")
+        center / cover
+        no-repeat;
+}
+
+
+.wallpaper-preview.dragon {
+    background:
+        url("../assets/dragon.webp")
         center / cover
         no-repeat;
 }
@@ -852,29 +867,7 @@
     background: rgba(31, 28, 40, .35);
 }
 
-.dark .desktop-icon-name {
-    background: transparent;
-    color: #f3f4f6;
-    font-weight: 900;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, .75);
-}
 
-.dark .desktop-icon-art {
-    color: #f3f4f6;
-    filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, .65));
-}
-
-.dark .desktop-icon-art.settings {
-    color: #f3f4f6;
-}
-
-.dark .desktop-icon-art.pdf {
-    color: #f0747c;
-}
-
-.dark .desktop-icon-art.folder {
-    color: #c084fc;
-}
 
 .dark .main-window {
     background: #2a2b30;
@@ -1441,11 +1434,13 @@
     }
 
     .desktop-icons {
-        top: 8px;
-        right: 6px;
+        top: 50%;
+        left: 50%;
+        right: auto;
         width: 160px;
         grid-template-columns: repeat(2, 74px);
         column-gap: 4px;
+        transform: translate(-50%, -50%);
     }
 
     .desktop-icon {
@@ -1733,7 +1728,7 @@ body,
 
 
 .desktop-icon-art.changelog {
-    color: #6d6872;
+    color: #f5f5f5;
     font-size: 29px;
     filter: drop-shadow(2px 2px 0 rgba(35, 31, 40, .28));
 }
@@ -1806,10 +1801,6 @@ body,
     color: #b77cff;
 }
 
-.dark .desktop-icon-art.changelog {
-    color: #b3adb8;
-}
-
 .dark .desktop-clock {
     background: rgba(35, 31, 41, .9);
     border-color: rgba(184, 165, 196, .42);
@@ -1832,6 +1823,13 @@ body,
 .dark .changelog-terminal {
     background: #090a0e;
     color: #e9e5eb;
+}
+
+.dark-wallpaper .desktop-icon-name {
+    color: #ffffff;
+    text-shadow:
+        1px 1px 0 rgba(0, 0, 0, .8),
+        -1px -1px 0 rgba(0, 0, 0, .35);
 }
 
 @media (max-width: 700px) {

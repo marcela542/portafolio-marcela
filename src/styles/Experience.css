@@ -1323,6 +1323,13 @@
     }
 }
 
+@media (max-width: 520px) {
+    .experience-main-year {
+        display: none;
+    }
+}
+
+
 
 /* =========================================================
    RESPONSIVE FINAL — CENTRAR EXPERIENCIA EN TABLET

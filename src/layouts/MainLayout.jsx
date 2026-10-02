@@ -18,6 +18,8 @@ import Navbar from "../components/Navbar";
 import fondo from "../assets/fondo.webp";
 import atardecer from "../assets/atardecer.webp";
 import paisaje1 from "../assets/paisaje1.webp";
+import luna from "../assets/luna.webp";
+import dragon from "../assets/dragon.webp";
 
 import "../styles/MainLayout.css";
 
@@ -102,6 +104,16 @@ const fondosEscritorio = {
     paisaje: {
         nombre: "Paisaje",
         backgroundImage: `url(${paisaje1})`
+    },
+
+    luna: {
+        nombre: "Luna",
+        backgroundImage: `url(${luna})`
+    },
+
+    dragon: {
+        nombre: "Dragon",
+        backgroundImage: `url(${dragon})`
     }
 };
 
@@ -279,7 +291,11 @@ function MainLayout() {
             />
 
             <main
-                className="desktop"
+                className={`desktop ${
+                    ["atardecer", "luna", "dragon"].includes(fondoEscritorio)
+                        ? "dark-wallpaper"
+                        : ""
+                }`}
                 style={{
                     backgroundImage:
                         fondosEscritorio[fondoEscritorio].backgroundImage

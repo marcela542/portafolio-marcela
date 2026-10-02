@@ -5,19 +5,32 @@
     --nav-gray: #dedce1;
     --nav-gray-soft: #eceaed;
     --nav-white: #f8f7f9;
-    --nav-border: #f6f6f7;
+    --nav-border: #d3d0d6;
     --nav-accent: #a57ecd;
+
     position: relative;
     z-index: 9500;
-    width: 130px;
+
+    width: 110px;
     min-height: 100vh;
     box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
+
     padding: 14px 10px 12px;
-    background: linear-gradient(180deg, #f8f7f9 0%, #eeedf0 100%);
-    border-right: 2px solid var(--nav-border);
+
+    background: linear-gradient(
+        180deg,
+        #ecebee 0%,
+        #e3e1e6 100%
+    );
+
+    border-right: 1px solid #cbc8cf;
+    box-shadow: 3px 0 8px rgba(24, 23, 27, 0.10);
+
     color: var(--nav-ink);
+
     overflow: hidden;
     font-family: "IBM Plex Mono", monospace;
 }
