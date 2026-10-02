@@ -15,9 +15,9 @@ import {
 } from "react-icons/fa6";
 
 import Navbar from "../components/Navbar";
-import fondo from "../assets/fondo.png";
-import atardecer from "../assets/atardecer.jpg";
-import paisaje1 from "../assets/paisaje1.jpg";
+import fondo from "../assets/fondo.webp";
+import atardecer from "../assets/atardecer.webp";
+import paisaje1 from "../assets/paisaje1.webp";
 
 import "../styles/MainLayout.css";
 

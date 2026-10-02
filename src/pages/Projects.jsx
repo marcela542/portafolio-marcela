@@ -9,10 +9,10 @@ import {
     FaChevronRight,
     FaFolderOpen
 } from "react-icons/fa6";
-import clicktiendaImg from "../assets/clicktienda.png";
-import gestionpersonalImg from "../assets/gestionpersonal.png";
-import pythonImg from "../assets/automatizacion.png";
-import landingImg from "../assets/landing.png";
+import clicktiendaImg from "../assets/clicktienda.webp";
+import gestionpersonalImg from "../assets/gestionpersonal.webp";
+import pythonImg from "../assets/automatizacion.webp";
+import landingImg from "../assets/landing.webp";
 import "../styles/Projects.css";
 
 function Projects() {

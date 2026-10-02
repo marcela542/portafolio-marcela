@@ -13,10 +13,10 @@ import {
     FaCalendarDays,
     FaUser
 } from "react-icons/fa6";
-import inventarioImg from "../assets/inventario.png";
-import appsscriptImg from "../assets/appsscript.png";
-import gestionpersonalImg from "../assets/gestionpersonal2.png";
-import clicktiendaImg from "../assets/clicktienda1.png";
+import inventarioImg from "../assets/inventario.webp";
+import appsscriptImg from "../assets/appsscript.webp";
+import gestionpersonalImg from "../assets/gestionpersonal2.webp";
+import clicktiendaImg from "../assets/clicktienda1.webp";
 import "../styles/Experience.css";
 
 const experiences = [

@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa6";
 
 import "../styles/About.css";
-import imagen1 from "../assets/imagen1.png";
+import imagen1 from "../assets/imagen1.webp";
 
 function About() {
     const [tabActivo, setTabActivo] = useState("about");

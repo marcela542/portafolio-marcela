@@ -19,9 +19,9 @@ import {
     SiPostgresql
 } from "react-icons/si";
 
-import rocky from "../assets/rocky.png";
-import milo from "../assets/milo.png";
-import marcela from "../assets/perfil.png";
+import rocky from "../assets/rocky.webp";
+import milo from "../assets/milo.webp";
+import marcela from "../assets/perfil.webp";
 
 import "../styles/Home.css";
 

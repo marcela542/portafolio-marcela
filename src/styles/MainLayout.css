@@ -375,7 +375,7 @@
 
 .wallpaper-preview.cielo {
     background:
-        url("/src/assets/fondo.png")
+        url("/src/assets/fondo.webp")
         center / cover
         no-repeat;
 }
@@ -383,7 +383,7 @@
 .wallpaper-preview.atardecer {
     background:
         linear-gradient(rgba(223, 126, 181, .52), rgba(72, 47, 104, .44)),
-        url("/src/assets/fondo.png")
+        url("/src/assets/fondo.webp")
         center / cover
         no-repeat;
 }
@@ -391,21 +391,14 @@
 .wallpaper-preview.noche {
     background:
         linear-gradient(rgba(25, 30, 69, .76), rgba(13, 14, 31, .84)),
-        url("/src/assets/fondo.png")
-        center / cover
-        no-repeat;
-}
-
-.wallpaper-preview.luna {
-    background:
-        url("/src/assets/luna.jpg")
+        url("/src/assets/fondo.webp")
         center / cover
         no-repeat;
 }
 
 .wallpaper-preview.paisaje {
     background:
-        url("/src/assets/paisaje1.jpg")
+        url("/src/assets/paisaje1.webp")
         center / cover
         no-repeat;
 }
