@@ -410,10 +410,9 @@
         no-repeat;
 }
 
-
-.wallpaper-preview.dragon {
+.wallpaper-preview.invierno {
     background:
-        url("../assets/dragon.webp")
+        url("../assets/invierno.webp")
         center / cover
         no-repeat;
 }

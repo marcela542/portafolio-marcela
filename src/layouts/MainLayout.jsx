@@ -19,7 +19,7 @@ import fondo from "../assets/fondo.webp";
 import atardecer from "../assets/atardecer.webp";
 import paisaje1 from "../assets/paisaje1.webp";
 import luna from "../assets/luna.webp";
-import dragon from "../assets/dragon.webp";
+import invierno from "../assets/invierno.webp";
 
 import "../styles/MainLayout.css";
 
@@ -111,9 +111,9 @@ const fondosEscritorio = {
         backgroundImage: `url(${luna})`
     },
 
-    dragon: {
-        nombre: "Dragon",
-        backgroundImage: `url(${dragon})`
+    invierno: {
+        nombre: "Invierno",
+        backgroundImage: `url(${invierno})`
     }
 };
 
@@ -292,7 +292,7 @@ function MainLayout() {
 
             <main
                 className={`desktop ${
-                    ["atardecer", "luna", "dragon"].includes(fondoEscritorio)
+                    ["atardecer", "luna", "invierno"].includes(fondoEscritorio)
                         ? "dark-wallpaper"
                         : ""
                 }`}
